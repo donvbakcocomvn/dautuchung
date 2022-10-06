@@ -33,7 +33,9 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dự Án <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/?page=duan">Dự án </a></li>
-                                    <li><a href="/?page=taoduan">Tạo mới dự án </a></li>
+                                    <li><a href="/?page=taoduan">Tạo dự án đất nền </a></li>
+                                    <li><a href="/?page=taoduanchungcu">Tạo dự án chung cư </a></li>
+                                    <li><a href="/?page=taoduannongtrai">Tạo dự án nông trại </a></li>
                                 </ul>
                             </li>
                             <li><a href="/?page=giaodich">Ví và Giao dịch</a></li>

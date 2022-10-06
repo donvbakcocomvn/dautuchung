@@ -6,18 +6,18 @@ $duan = json_decode(file_get_contents("data/duan.json"));
 <section class="content-header">
     <h1>
         Dự án
-        <small>Tạo dự án</small>
+        <small>Tạo dự án nông trại</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a href="/"><i class="fa fa-list"></i> Tạo dự án</a></li>
+        <li><a href="/"><i class="fa fa-list"></i> Tạo dự án nông trại</a></li>
     </ol>
 </section>
 <section class="content">
     <div class="container ">
         <div class="box box-info">
             <div class="box-header">
-                <h3 class="box-title">Dự án đất nền</h3>
+                <h3 class="box-title">Tạo dự án nông trại</h3>
             </div>
             <div class="box-body">
                 <!-- Color Picker -->
@@ -52,44 +52,28 @@ $duan = json_decode(file_get_contents("data/duan.json"));
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Diện Tích(m<sup>2</sup>) </label>
+                                        <label>Diện Tích(ha) </label>
                                         <input type="num" class="form-control my-colorpicker1 colorpicker-element">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Chiều ngang(m) </label>
+                                        <label>Loại hình chăn nuôi </label>
                                         <input type="num" class="form-control my-colorpicker1 colorpicker-element">
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Chiều dọc(m) </label>
-                                        <input type="num" class="form-control my-colorpicker1 colorpicker-element">
-                                    </div>
-                                </div>
+                                </div> 
                             </div>
 
                         </div>
                     </fieldset>
                 </div>
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>THỜI GIAN Bắt ĐẦU </label>
-                                <input type="date" class="form-control my-colorpicker1 colorpicker-element">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>THỜI GIAN ĐẦU TƯ (Tháng) </label>
-                                <input type="number" class="form-control my-colorpicker1 colorpicker-element">
-                            </div>
-                        </div>
-                    </div> 
-                </div>
 
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>THỜI GIAN ĐẦU TƯ (Tháng) </label>
+                        <input type="number" class="form-control my-colorpicker1 colorpicker-element">
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>LÃI SUẤT CƠ BẢN (%/năm)</label>
