@@ -1,0 +1,74 @@
+[
+    {
+        "HinhAnh": "/public/duan/dat-nen.jpg",
+        "DiaChi": "Giang nghĩa, Đăk Nông",
+        "Ten": "Đất nền Lô 1099 1000m2",
+        "GiaTriDuAn": "25,000,000,000 <sup>đ</sup>",
+        "LoaiDuAn": "Đất Nền",
+        "TrangThai": "Đang Chờ",
+        "XuatThamGia": "15/20",
+        "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "20%/năm",
+        "ThoiGianDauTu": "6 tháng"
+    },
+    {
+        "HinhAnh": "/public/duan/chung-cu.jpg",
+        "DiaChi": "Gò vấp, Hồ chí minh",
+        "Ten": "Chung Cư An Lạc",
+        "GiaTriDuAn": "495,000,000,000,000 <sup>đ</sup>",
+        "LoaiDuAn": "Chung cư",
+        "TrangThai": "Đang chạy",
+        "XuatThamGia": "550",
+        "GiaTri1Xuat": "900,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "20%/năm",
+        "ThoiGianDauTu": "18 tháng"
+    },
+    {
+        "HinhAnh": "/public/duan/nong-trai.jpg",
+        "DiaChi": "Lâm đồng",
+        "Ten": "Trang trại rau sạch 4ha",
+        "GiaTriDuAn": "100,000,000,000 <sup>đ</sup>",
+        "LoaiDuAn": "Chung cư",
+        "TrangThai": "Đang chạy",
+        "XuatThamGia": "1/4",
+        "GiaTri1Xuat": "25,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "20%/năm",
+        "ThoiGianDauTu": "6 tháng"
+    },
+    {
+        "HinhAnh": "/public/duan/chung-cu.jpg",
+        "DiaChi": "Gò vấp, Hồ chí minh",
+        "Ten": "Chung Cư An Hòa",
+        "GiaTriDuAn": "495,000,000,000,000 <sup>đ</sup>",
+        "LoaiDuAn": "Chung cư",
+        "TrangThai": "Đang chạy",
+        "XuatThamGia": "550",
+        "GiaTri1Xuat": "900,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "20%/năm",
+        "ThoiGianDauTu": "18 tháng"
+    },
+    {
+        "HinhAnh": "/public/duan/dat-nen.jpg",
+        "DiaChi": "Tậy Ninh ",
+        "Ten": "Đất nền 10x25 250m2",
+        "GiaTriDuAn": "5,000,000,000 <sup>đ</sup>",
+        "LoaiDuAn": "Đất Nền",
+        "TrangThai": "Đang Chờ",
+        "XuatThamGia": "1/5",
+        "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "20%/năm",
+        "ThoiGianDauTu": "6 tháng"
+    },
+    {
+        "HinhAnh": "/public/duan/nuoi-de.png",
+        "DiaChi": "Đăk Nông",
+        "Ten": "Trang trại Nuôi 70 con Dê",
+        "GiaTriDuAn": "120,000,000,000 <sup>đ</sup>",
+        "LoaiDuAn": "Chung cư",
+        "TrangThai": "Đang chạy",
+        "XuatThamGia": "1/4",
+        "GiaTri1Xuat": "30,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "20%/năm",
+        "ThoiGianDauTu": "2 năm"
+    }
+]

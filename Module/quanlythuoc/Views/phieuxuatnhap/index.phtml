@@ -1,0 +1,154 @@
+<ol class="breadcrumb">
+    <li><a href="/index.php?controller=backend">Home</a></li>
+    <li> Danh Sách Phiếu Xuất Nhập</li>
+</ol>
+
+
+
+<div class="container-fluid">
+
+    <div class="clearfix">
+        <div class="box box-success">
+            <div class="">
+                <div class="box-header">
+                    <form method="get" action="/quanlythuoc/phieuxuatnhap/index/">
+                        <div class="row">
+                            <div class="col-sm-3 form-group">
+                                <?php
+                                \Model\FormSearch::MaPhieu($_GET['idPhieu'] ?? null)->renderHtml2(null, null, 'glyphicon glyphicon-barcode form-control-feedback');
+                                ?>
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <?php
+                                \Model\FormSearch::LoaiPhieu($_GET['loaiphieu'] ?? null)->renderHtml2(null, null, '');
+                                ?>
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <?php
+                                \Model\FormSearch::NoiDungPhieu($_GET['content'] ?? null)->renderHtml2(null, null, 'glyphicon glyphicon-folder-open form-control-feedback');
+                                ?>
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="inputSuccess2" class="text-capitalize"><em>Nhấn vào đây&nbsp; </em><i class="fa fa-check"></i></label>
+                                    <button type="submit" style="border-radius: 5px;" class="form-control btn btn-success" name="btnTim" id="keyword">
+                                        <i class="fa fa-filter"></i>&nbsp; Tìm kiếm theo bộ lọc
+                                    </button>
+                                    <button type="submit" style="border-radius: 5px;" class="form-control btn btn-success" name="btnsubmit" id="keyword">
+                                        <i class="fa fa-filter"></i>&nbsp;Hello
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <hr style="border-top: 2px solid #00a65a; margin-top:0px" width="90%" noshade="noshade">
+            </div>
+            <div class="box-header">
+                <h3 class="box-title">Danh Sách Phiếu</h3>
+                <div class="box-tools">
+                    <?php
+
+                    use Model\Common;
+                    use Model\FormRender;
+                    use Module\quanlythuoc\Model\PhieuXuatNhap;
+
+                    Module\quanlythuoc\Model\btnHtml::btnThemPhieuXuatNhap();
+                    FormRender::HuongDan("danhsachphieu", 'Hướng dẫn phiếu xuất/nhập');
+                    ?>
+                </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 100px;"></th>
+                            <th>STT</th>
+                            <th>Mã Phiếu</th>
+                            <th>Loại Phiếu</th>
+                            <th>Nội Dung</th>
+                            <th>Tổng Tiền</th>
+                            <th>Ngày tạo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($items as $index => $item) {
+                            $_item = new PhieuXuatNhap($item);
+                        ?>
+                            <tr>
+                                <td class="text-center">
+                                    <?php
+                                    // echo Module\quanlythuoc\Model\btnHtml::btnSuaPhieuXuatNhap($_item->Id);
+                                    // echo Module\quanlythuoc\Model\btnHtml::btnXoaPhieuXuatNhap($_item->Id);
+                                    echo Module\quanlythuoc\Model\btnHtml::btnChiTietPhieuXuatNhap($_item->Id);
+                                    ?>
+                                </td>
+                                <td><?php echo (($indexPage - 1) * $pageNumber) + $index + 1; ?></td>
+                                <td><?php echo $_item->IdPhieu; ?></td>
+                                <td><?php echo $_item->XuatNhap(); ?></td>
+                                <td><?php echo $_item->NoiDungPhieu ?></td>
+                                <td><?php echo $_item->getTongTien(); ?></td>
+                                <td><?php echo $_item->NgayNhap() ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+                <div class="box-footer">
+                    <div class="d-flex">
+                        <?php
+                        \Model\FormCommon::Select(
+                            "",
+                            "",
+                            [10, 20, 50, 100],
+                            [
+                                "style" => "max-width:150px;",
+                                "class" => "form-control",
+                                "value" => $pageNumber,
+                                "onchange" => "SoDongHienThi(this.value)",
+                            ]
+                        )->render();
+                        ?>
+                        <?php
+                        $linkPhanTrang = "/index.php?module=quanlythuoc&controller=phieuxuatnhap&action=index&idPhieu={$params["idPhieu"]}&loaiphieu={$params["loaiphieu"]}&content={$params["content"]}&indexPage=[i]&pageNumber={$pageNumber}";
+                        echo \Model\Common::PhanTrang($total, $indexPage, $pageNumber, $linkPhanTrang);
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var SoDongHienThi = function(evalue) {
+        var linkPhanTrang = '/index.php?module=quanlythuoc&controller=phieuxuatnhap&action=index&indexPage=1&pageNumber=[j]';
+        linkPhanTrang = linkPhanTrang.replace("[j]", evalue);
+        window.location.href = linkPhanTrang;
+    }
+    $(document).ready(function() {
+
+        // Change Thuốc 
+        // console.log(e.attr("id"));
+        $("#DongBoPhieu").change(function(param) {
+            // $.ajax({
+            //     url: `/quanlythuoc/phieuxuatnhap/capnhatdanhsachsanpham/${idThuoc}/${index}/`,
+            //     type: 'get',
+            //     contentType: false,
+            //     processData: false,
+            //     success: function(response) {
+            //         $(idSoLuong).val(response.Soluong);
+            //         $(idSoLo).val(response.Solo);
+            //         $(idNhaSanXuat).val(response.NhaSX);
+            //         $(idNuocSanXuat).val(response.NuocSX);
+            //         $(idPrice).val(response.Gianhap);
+            //         $(idDVT).val(response.DVTTitle);
+            //     },
+            //     complete: function() {
+            //         //spinner.close();
+            //     }
+            // });
+        });
+    });
+</script>
