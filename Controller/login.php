@@ -18,7 +18,7 @@ class login extends \Application
         self::$_Layout = "login";
         $_SESSION[QuanLy] = isset($_SESSION[QuanLy]) ? $_SESSION[QuanLy] : null;
         if ($_SESSION[QuanLy] != null) {
-            \Model\Common::ToUrl("/index.php");
+            \Model\Common::ToUrl("/");
         }
     }
 
@@ -68,7 +68,7 @@ class login extends \Application
                     setcookie("TaiKhoan", null, -1, "/");
                 }
 
-                \Model\Common::ToUrl("/index.php");
+                \Model\Common::ToUrl("/");
             }
         } catch (\Exception $exc) {
             //            echo $exc->getMessage();
@@ -95,7 +95,7 @@ class login extends \Application
             //            var_dump($user);
             if ($key == $user["key"]) {
                 $_SESSION[QuanLy] = $user;
-                \Model\Common::ToUrl("/index.php");
+                \Model\Common::ToUrl("/");
             }
         }
         $this->View();
