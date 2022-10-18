@@ -1,23 +1,23 @@
 {
-    "short_name": "Bakco ERP",
-    "name": "Bakco | Enterprise Resource Planning",
-    "description": "Enterprise Resource Planning",
+    "short_name": "ShareInvestment",
+    "name": "Share Investment",
+    "description": "Share Investment",
     "orientation": "portrait",
     "icons": [
         {
-            "src": "http://nhanvien.bakco.vn/public/Logo_full.png",
+            "src": "/public/no-user.jpg",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "http://nhanvien.bakco.vn/public/Logo_full.png",
+            "src": "/public/no-user.jpg",
             "type": "image/png",
             "sizes": "512x512"
         }
     ],
     "start_url": "/",
-    "background_color": "#fff",
+    "background_color": "#62060A",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#fff"
+    "theme_color": "#62060A"
 }
