@@ -21,14 +21,14 @@ $duan = json_decode(file_get_contents("data/duan.json"));
         <div class="container ">
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">Dự án đất nền</h3>
+                    <h3 class="box-title">Tạo dự án</h3>
                 </div>
                 <div class="box-body">
                     <!-- Color Picker -->
                     <div class="col-md-12">
 
                         <fieldset>
-                            <legend>Thong tin chung</legend>
+                            <legend><strong>Thông tin chung</strong></legend>
                             <div class=" ">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -36,16 +36,37 @@ $duan = json_decode(file_get_contents("data/duan.json"));
                                         DuAnForm::Name()->renderHTML();
                                         ?>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <?php
                                         DuAnForm::GiaTriDuAn()->renderHTML();
                                         ?>
                                     </div>
+                                    <div class="col-md-6">
+                                        <?php
+                                        DuAnForm::XuatThamGia()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::ThoiGianBatDau()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::ThoiGianDauTu()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::LaiXuatCoBan()->renderHTML();
+                                        ?>
+                                    </div>
+
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset>
-                            <legend>Quy mô dự án</legend>
+                            <legend><strong>Quy mô dự án</strong></legend>
                             <div class=" ">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -67,12 +88,8 @@ $duan = json_decode(file_get_contents("data/duan.json"));
 
                             </div>
                         </fieldset>
-
-                    </div>
-
-                    <div class="col-md-12">
                         <fieldset>
-                            <legend>Địa chỉ</legend>
+                            <legend> <strong>Địa chỉ</strong></legend>
                             <div class=" ">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -100,35 +117,6 @@ $duan = json_decode(file_get_contents("data/duan.json"));
                             </div>
                         </fieldset>
                     </div>
-
-                    <div class="col-md-12">
-
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <?php
-                                DuAnForm::ThoiGianBatDau()->renderHTML();
-                                ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?php
-                                DuAnForm::ThoiGianDauTu()->renderHTML();
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <?php
-                        DuAnForm::LaiXuatCoBan()->renderHTML();
-                        ?>
-                    </div>
-                    <div class="col-md-12">
-                        <?php
-                        DuAnForm::XuatThamGia()->renderHTML();
-                        ?>
-                    </div>
                     <div class="col-md-12">
                         <?php
                         DuAnForm::MoTa()->renderHTML();
@@ -136,11 +124,10 @@ $duan = json_decode(file_get_contents("data/duan.json"));
                     </div>
                 </div><!-- /.box-body -->
                 <div class="box-footer">
-                    <button class="btn btn-success">Tạo Mới Dự Án</button>
+                    <button class="btn pull-right btn-success">Tạo Dự Án</button>
                 </div>
             </div>
         </div>
-
     </form>
 </section>
 <script src="/public/TinhThanh/tinhthanh.js"></script>

@@ -5,31 +5,34 @@ use Views\theme\backend\Functions;
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <?php
-        Functions::head();
-        ?>
 
-    </head>
-    <body class="hold-transition <?php echo $_COOKIE["sidebar-toggle"] ?? "" ?> skin-blue sidebar-mini">
-        <div class="wrapper"> 
-            <?php
-            Functions::header();
-            Functions::leftaside();
-            ?> 
-            <div class="content-wrapper">
-                
-                <?php
-                include $_Content;
-                ?> 
-            </div>
-            <?php 
-            Functions::footer();  
-            Functions::aside();
-            ?>  
-        </div><!-- ./wrapper --> 
+<head>
+    <?php
+    Functions::head();
+    ?>
+
+</head>
+
+<body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
         <?php
-        Functions::js();
-        ?> 
-    </body>
+        Functions::header();
+        Functions::leftaside();
+        ?>
+        <div class="content-wrapper">
+
+            <?php
+            include $_Content;
+            ?>
+        </div>
+        <?php
+        Functions::footer();
+        Functions::aside();
+        ?>
+    </div><!-- ./wrapper -->
+    <?php
+    Functions::js();
+    ?>
+</body>
+
 </html>

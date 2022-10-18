@@ -18,54 +18,165 @@ $duan = json_decode(file_get_contents("data/duan.json"));
         foreach ($duan as $key => $value) {
 
         ?>
-            <div class="col-md-4">
+            <div class="col-md-6">
+
                 <div class="box box-widget widget-user">
-                    <!-- Add the bg color to the header using any of the bg-* classes -->
                     <div class="widget-user-header bg-light-blue" style="height: auto;padding: 0px;">
                         <div class="row">
-                            <div class="col-xs-3">
-                                <img onerror="this.src='/public/no-img.jpg'" class="img img-responsive" src="<?php echo $value->HinhAnh ?>" alt="User Avatar">
+                            <div class="col-xs-3 text-center ">
+                                <img style="height: 160px;width:auto;" onerror="this.src='/public/no-img.jpg'" class="img img-responsive" src="<?php echo $value->HinhAnh ?>" alt="User Avatar">
                             </div>
                             <div class="col-xs-9">
-                                <p class="">
+                                <h3 style="margin: 0px;" class="">
+                                    <?php echo $value->Ten ?>
+                                    <span style="margin-top: 10px;margin-right: 10px;" class="pull-right badge bg-green"><?php echo $value->TrangThai ?></span>
+                                </h3>
+                                <p class="">Tổng Giá trị đầu tư:<span class=" badge bg-blue"><?php echo $value->GiaTriDuAn ?></span></p>
+                                <p class="" style="height: 40px;margin-bottom: 0px;">
+                                    Loại Dự Án <span class=" badge bg-blue"><?php echo $value->LoaiDuAn ?></span>
+                                    Diện tích <span class=" badge bg-blue"><?php echo $value->DienTichHa ?? "" ?></span>
+
+                                    Loại hình <span class=" badge bg-blue"><?php echo $value->LoaiHinh ?? "" ?></span>
+                                    Số lượng <span class=" badge bg-blue"><?php echo $value->SoLuong ?? "" ?></span>
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                     <?php echo $value->DiaChi ?>
                                 </p>
-                                <h3 style="margin: 0px;" class="">
-                                    <?php echo $value->Ten ?>
-                                </h3>
-                                <p class=""><?php echo $value->GiaTriDuAn ?></p>
-                                <p class="">
-                                    Loại Dự Án <span class=" badge bg-blue"><?php echo $value->LoaiDuAn ?></span></a>
-                                    Trạng thái <span class=" badge bg-blue"><?php echo $value->TrangThai ?></span></a>
-                                </p>
+
+                                <div class="row">
+                                    <div class="col-xs-3 border-right">
+                                        <div class="description-block">
+                                            <span class="description-text">Xuất tham gia</span>
+                                            <h5 class="description-header"><?php echo $value->XuatThamGia ?></h5>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 border-right">
+                                        <div class="description-block">
+                                            <span class="description-text">Giá trị mỗi xuất</span>
+                                            <h5 style="white-space: nowrap;" class="description-header"><?php echo $value->GiaTri1Xuat ?></h5>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 border-right">
+                                        <div class="description-block">
+                                            <span class="description-text">Sinh Lãi dự kiến</span>
+                                            <h5 style="white-space: nowrap;" class="description-header">
+                                                <?php echo $value->LaiXuatCoBan ?></h5>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3  ">
+                                        <div class="description-block">
+                                            <span class="description-text">Thời Gian Đầu Tư</span>
+                                            <h5 style="white-space: nowrap;" class="description-header"><?php echo $value->ThoiGianDauTu ?></h5>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="box-footer">
+                    <div class="box-footer" style="height: 120px;padding-top: 0px;">
                         <div class="row">
+                            <div class="col-xs-12">
+                                <h4>
+                                    <span class=" badge bg-blue">Dự kiến</span>
+                                </h4>
+                            </div>
                             <div class="col-xs-3 border-right">
                                 <div class="description-block">
-                                    <h5 class="description-header"><?php echo $value->XuatThamGia ?></h5>
-                                    <span class="description-text">Xuất tham gia</span>
+                                    <span class="description-text">Tổng doanh thu</span>
+                                    <h5 class="description-header">
+                                        <?php echo $value->DuKien->TongDanhThu ?? "" ?>
+                                    </h5>
+
                                 </div>
                             </div>
                             <div class="col-xs-3 border-right">
                                 <div class="description-block">
-                                    <h5 style="white-space: nowrap;" class="description-header"><?php echo $value->GiaTri1Xuat ?></h5>
-                                    <span class="description-text">Giá trị <br> mỗi xuất</span>
+                                    <span class="description-text">Tỷ suất sinh lãi</span>
+                                    <h5 style="white-space: nowrap;" class="description-header">
+                                        <?php echo $value->DuKien->Tyxuatsinhlai ?? "" ?>
+                                    </h5>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-3 border-right">
+                                <div class="description-block">
+                                    <span class="description-text">Giá trị danh thu 1 Gói</span>
+                                    <h5 style="white-space: nowrap;" class="description-header">
+                                        <?php echo $value->DuKien->GiaTriDanhThu1Goi ?? "" ?>
+                                    </h5>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-3 border-right">
+                                <div class="description-block">
+                                    <span class="description-text">Tỷ suất sinh lãy 1 Gói</span>
+                                    <h5 style="white-space: nowrap;" class="description-header">
+                                        <?php echo $value->DuKien->TyXuatSinhLai1Goi ?? "" ?>
+                                    </h5>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer" style="height: 120px;padding-top: 0px;">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>
+                                    <span class=" badge bg-green">Thực tế</span>
+                                </h4>
+                            </div>
+                            <!-- <div class="col-xs-2 border-right">
+                                <div class="description-block">
+                                    <span class="description-text">Tổng số thu hoạch (kg)</span>
+                                    <h5 class="description-header">
+                                        <?php echo $value->ThucTe->TongThuHoach ?? "" ?>
+                                    </h5>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-2 border-right">
+                                <div class="description-block">
+                                    <span class="description-text">Giá bán</span>
+                                    <h5 class="description-header">
+                                        <?php echo $value->ThucTe->GiaBan ?? "" ?>
+                                    </h5>
+
+                                </div>
+                            </div> -->
+                            <div class="col-xs-3 border-right">
+                                <div class="description-block">
+                                    <span class="description-text">Tổng doanh thu</span>
+                                    <h5 class="description-header">
+                                        <?php echo $value->ThucTe->TongDanhThu ?? "" ?>
+                                    </h5>
+
                                 </div>
                             </div>
                             <div class="col-xs-3">
                                 <div class="description-block">
-                                    <h5 style="white-space: nowrap;" class="description-header"><?php echo $value->LaiXuatCoBan ?></h5>
-                                    <span class="description-text">Lãi suất <br> cơ bản</span>
+                                    <span class="description-text">Lãi tổng dự án</span>
+                                    <h5 class="description-header">
+                                        <?php echo $value->ThucTe->LaiTongDuAn ?? "" ?>
+                                    </h5>
                                 </div>
                             </div>
                             <div class="col-xs-3">
                                 <div class="description-block">
-                                    <h5 style="white-space: nowrap;" class="description-header"><?php echo $value->ThoiGianDauTu ?></h5>
-                                    <span class="description-text">Thời Gian <br> Đầu Tư</span>
+                                    <span class="description-text">Tổng thu 1 gói</span>
+                                    <h5 class="description-header">
+                                        <?php echo $value->ThucTe->TyXuatLai1Goi ?? "" ?>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="description-block">
+                                    <span class="description-text">Tỷ suất sinh lãi 1 Gói</span>
+                                    <h5 class="description-header">
+                                        <?php echo $value->ThucTe->TongThu1Goi ?? "" ?>
+                                    </h5>
                                 </div>
                             </div>
                         </div>

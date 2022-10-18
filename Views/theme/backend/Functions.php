@@ -36,7 +36,7 @@ class Functions
         <link rel="dns-prefetch" href="//ajax.googleapis.com" />
         <link rel="dns-prefetch" href="//www.facebook.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <title>Phòng khám bác sĩ Phương Uyên</title>
+        <title>Share Investment</title>
         <link rel=icon href=https://www.bakco.com.vn/wp-content/uploads/2017/10/cropped-bakco_favicon-1-32x32.png sizes=32x32>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -192,8 +192,9 @@ class Functions
                                     </a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="/locations/index"><i class="fa fa-circle-o"></i> Tỉnh/Thành phố</a></li>
-                                        <li><a href="/options/gioitinh/"><i class="fa fa-circle-o"></i> Giới tính</a></li>
-           
+                                        <li><a href="/options/index/gioitinh/"><i class="fa fa-circle-o"></i> Giới tính</a></li>
+                                        <li><a href="/options/index/loaihinhduan/"><i class="fa fa-circle-o"></i> Loại hình dự án</a></li>
+
                                     </ul>
                                 </li>
                             <?php

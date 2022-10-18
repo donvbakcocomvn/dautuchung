@@ -4,6 +4,8 @@ namespace Module\dautuchung\Model;
 
 use PFBC\Element;
 use Model\FormRender;
+use Model\OptionsService;
+use Module\baiviet\Model\Options\Options;
 use PFBC\Element\Hidden;
 use PFBC\Element\Textbox;
 
@@ -55,7 +57,6 @@ class DuAnForm
         $properties[FormRender::onInvalid] = FormRender::setinvalid("Bạn chưa nhập mô tả");
         $properties["id"] = "id" . __FUNCTION__;
         $properties["class"] = "editor";
-        $properties[FormRender::Required] = "true";
         $name = self::SetName(__FUNCTION__);
         return new FormRender(new Element\Textarea("Mô tả dự án", $name, $properties));
     }
@@ -121,6 +122,23 @@ class DuAnForm
         $name = self::SetName(__FUNCTION__);
         return new FormRender(new Element\Textbox("Diện Tích(m2)", $name, $properties));
     }
+    public static function DienTichHa($val = null)
+    {
+        $properties = self::$properties;
+
+        $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $name = self::SetName(__FUNCTION__);
+        return new FormRender(new Element\Textbox("Diện Tích(ha)", $name, $properties));
+    }
+    public static function LoaiHinhDuAn($val = null)
+    {
+        $properties = self::$properties;
+
+        $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $name = self::SetName(__FUNCTION__);
+        $options = OptionsService::GetGroupsToSelect("loaihinhduan");
+        return new FormRender(new Element\Select("Loại Hình", $name, $options, $properties));
+    }
     public static function ChieuNgang($val = null)
     {
         $properties = self::$properties;
@@ -128,6 +146,22 @@ class DuAnForm
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
         $name = self::SetName(__FUNCTION__);
         return new FormRender(new Element\Textbox("Chiều Ngang (m)", $name, $properties));
+    }
+    public static function SoPhongNgu($val = null)
+    {
+        $properties = self::$properties;
+
+        $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $name = self::SetName(__FUNCTION__);
+        return new FormRender(new Element\Textbox("Số Phòng Ngủ", $name, $properties));
+    }
+    public static function SoPhongVeSinh($val = null)
+    {
+        $properties = self::$properties;
+
+        $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $name = self::SetName(__FUNCTION__);
+        return new FormRender(new Element\Textbox("Số Phòng Ngủ", $name, $properties));
     }
     public static function ChieuDoc($val = null)
     {
@@ -142,6 +176,7 @@ class DuAnForm
         $properties = self::$properties;
 
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $properties["type"] = "date";
         $name = self::SetName(__FUNCTION__);
         return new FormRender(new Element\Textbox("Thời Gian Bắt Đầu", $name, $properties));
     }
@@ -166,7 +201,10 @@ class DuAnForm
         $properties = self::$properties;
 
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $properties["type"] = "number";
+        $properties["min"] = "0";
+        $properties[FormRender::onInvalid] = FormRender::setinvalid("Số gói không hợp lệ lớn hơn 0");
         $name = self::SetName(__FUNCTION__);
-        return new FormRender(new Element\Textbox("XUẤT THAM GIA", $name, $properties));
+        return new FormRender(new Element\Textbox("Số gói đầu tư", $name, $properties));
     }
 }
