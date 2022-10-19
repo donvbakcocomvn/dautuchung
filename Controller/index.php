@@ -6,7 +6,7 @@ class index extends \Application {
 
     public function __construct() {
         new backend();
-        self::$_Theme = "backend";
+        self::$_Theme = "backend2";
     }
 
     function index() {
