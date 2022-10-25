@@ -279,11 +279,11 @@ class Functions
                             </li>
                             <!-- User Account Menu -->
                             <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"  >
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img onerror="this.src='/public/no-user.jpg'" src="<?php echo $user->UserInfor(\Model\Users\UserInfor::HinhNhanVien)->Val; ?>" class="user-image" alt="User Image">
                                     <span class="hidden-xs"><?php echo $user->Name; ?></span>
                                 </a>
-                                <ul class="dropdown-menu"> 
+                                <ul class="dropdown-menu">
                                     <li class="user-header">
                                         <img onerror="this.src='/public/no-user.jpg'" src="<?php echo $user->UserInfor(\Model\Users\UserInfor::HinhNhanVien)->Val; ?>" class="img-circle" alt="User Image">
                                         <p>

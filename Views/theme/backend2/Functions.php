@@ -1,6 +1,6 @@
 <?php
 
-namespace Views\theme\backend;
+namespace Views\theme\backend2;
 
 use Application;
 use Model\User;
@@ -47,24 +47,6 @@ class Functions
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Theme style -->
-        <link href="/public/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
-        <link rel="stylesheet" href="/public/dist/css/skins/_all-skins.min.css">
-        <!-- iCheck -->
-        <link rel="stylesheet" href="/public/plugins/iCheck/flat/blue.css">
-        <!-- Morris chart -->
-        <link rel="stylesheet" href="/public/plugins/morris/morris.css">
-        <!-- jvectormap -->
-        <link rel="stylesheet" href="/public/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-        <!-- Date Picker -->
-        <link rel="stylesheet" href="/public/plugins/datepicker/datepicker3.css">
-        <link rel="manifest" href="/public/manifest.json?v=<?php echo filemtime('public/manifest.json') ?>">
-        <!-- Daterange picker -->
-        <link rel="stylesheet" href="/public/plugins/daterangepicker/daterangepicker-bs3.css">
-        <link rel="stylesheet" href="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-        <link href="/public/App.css?v=<?php echo filemtime("public/App.css"); ?>" rel="stylesheet" type="text/css" />
-
-
         <meta property="og:image" content="/public/Logo_full.png">
         <meta property="og:locale" content="vi_VN" />
         <meta property="og:url" content="<?php echo $actual_link; ?>">
@@ -75,14 +57,13 @@ class Functions
         <link rel="apple-touch-icon" href="/public/Logo_full.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/public/Logo_full.png">
         <link rel="apple-touch-icon" sizes="114x114" href="/public/Logo_full.png">
-
+        <link href="/public/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="/public/admin_blue/css/application.min.css" rel="stylesheet">
+        <link href="/public/admin_blue/css/Customer.css" rel="stylesheet">
+        <script src="/public/admin_blue/lib/jquery/dist/jquery.min.js"></script>
         <script src="/public/Ang1/angular.min.js" type="text/javascript"></script>
         <script src="/public/Ang1/angular-sanitize.min.js" type="text/javascript"></script>
-        <script src="/public/Ang1/angular-route.min.js" type="text/javascript"></script>
-        <script src="/public/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-        <script src="/public/plugins/sweetalert/dist/sweetalert2.all.min.js"></script>
-        <!-- <script src="/public/plugins/sweetalert/dist/sweetalert2.all.js"></script> -->
-
+        <!-- <script src="/public/Ang1/angular-route.min.js" type="text/javascript"></script> -->
 
         <script src="/public/Ang1/App.js?v=<?php echo filemtime("public/Ang1/App.js"); ?>" type="text/javascript"></script>
     <?php
@@ -91,50 +72,37 @@ class Functions
     public static function js()
     {
     ?>
-        <!-- jQuery 2.1.4 -->
 
-        <!-- jQuery UI 1.11.4 -->
-        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-        <script src="/public/plugins/select2/select2.full.js" type="text/javascript"></script>
-
-        <script>
-            $.widget.bridge('uibutton', $.ui.button);
-        </script>
-        <!-- Bootstrap 3.3.5 -->
-        <script src="/public/bootstrap/js/bootstrap.min.js"></script>
-        <!-- Morris.js charts -->
-
-        <!-- Sparkline -->
-        <script src="/public/plugins/sparkline/jquery.sparkline.min.js"></script>
-        <!-- jvectormap -->
-        <script src="/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="/public/plugins/knob/jquery.knob.js"></script>
-        <!-- daterangepicker -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-        <script src="/public/plugins/daterangepicker/daterangepicker.js"></script>
-        <!-- datepicker -->
-        <script src="/public/plugins/datepicker/bootstrap-datepicker.js"></script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-        <!-- Slimscroll -->
-        <script src="/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="/public/admin_blue/lib/jquery-pjax/jquery.pjax.js"></script>
+        <script src="/public/admin_blue/lib/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+        <script src="/public/admin_blue/lib/widgster/widgster.js"></script>
+        <script src="/public/admin_blue/lib/underscore/underscore.js"></script>
+        <script src="/public/admin_blue/js/app.js"></script>
+        <script src="/public/admin_blue/js/settings.js"></script>
+        <script src="/public/admin_blue/lib/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="/public/admin_blue/lib/jquery.sparkline/index.js"></script>
+        <script src="/public/admin_blue/lib/backbone/backbone.js"></script>
+        <script src="/public/admin_blue/lib/backbone.localStorage/backbone.localStorage-min.js"></script>
+        <script src="/public/admin_blue/lib/d3/d3.min.js"></script>
+        <script src="/public/admin_blue/lib/nvd3/nv.d3.min.js"></script>
+        <script src="/public/admin_blue/js/index.js"></script>
+        <!-- <script src="/public/admin_blue/js/chat.js"></script> -->
         <script src="/public/ckfinder/ckfinder.js" type="text/javascript"></script>
         <script src="/public/ckeditor/ckeditor.js" type="text/javascript"></script>
-        <!-- FastClick -->
-        <script src="/public/plugins/fastclick/fastclick.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="/public/dist/js/app.min.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="/public/App.js?v=<?php echo filemtime("public/App.js"); ?>" type="text/javascript"></script>
-        <script src="/public/dist/js/pages/dashboard.js?v=1"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="/public/dist/js/demo.js"></script>
-
-
-
+        <script src="/public/plugins/select2/select2.full.js" type="text/javascript"></script>
+        <script src="/public/admin_blue/lib/parsleyjs/dist/parsley.min.js"></script>
+        <script src="/public/App.js?v=<?php echo filemtime("public/App.js"); ?>"></script>
+        <script>
+            $(function() {
+                // function a() {
+                //     $("#validation-form").parsley(),
+                //         $(".widget").widgster()
+                // }
+                // a(), PjaxApp.onPageLoad(a)
+                window.DEBUG = 0;
+                window.localStorage.setItem("lb-errors", null);
+            });
+        </script>
     <?php
     }
 
@@ -146,6 +114,112 @@ class Functions
     <?php
     }
 
+    public static function sidebar()
+    {
+    ?>
+        <div class="logo">
+            <h4><a href="/">Share <strong>Investment</strong></a></h4>
+        </div>
+        <nav id="sidebar" class="sidebar nav-collapse collapse">
+            <ul id="side-nav" class="side-nav">
+                <li>
+                    <a href="/dautuchung/index/index/">
+                        <i class="fa fa-angle-double-right"></i>
+                        Các khoản đầu tư </a>
+                </li>
+                <li class="panel">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#forms-collapse1">
+                        <i class="fa fa-angle-double-right"></i>
+                        Dự Án
+                    </a>
+                    <ul id="forms-collapse1" class="panel-collapse collapse ">
+                        <li><a href="/dautuchung/duan/myproject/"><i class="fa fa-angle-right"></i>Dự án của tôi</a></li>
+                        <li><a href="/dautuchung/duan/index/"><i class="fa fa-angle-right"></i>Dự án </a></li>
+                        <li><a href="/dautuchung/duan/post"><i class="fa fa-angle-right"></i>Tạo dự án đất nền </a></li>
+                        <li><a href="/dautuchung/duan/post1"><i class="fa fa-angle-right"></i>Tạo dự án chung cư </a></li>
+                        <li><a href="/dautuchung/duan/post2"><i class="fa fa-angle-right"></i>Tạo dự án nông trại </a></li>
+                    </ul>
+                </li>
+                <li><a href="/dautuchung/giaodich/index/"><i class="fa fa-angle-double-right"></i> Ví và Giao dịch</a></li>
+
+                <li class="panel">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#forms-collapse2">
+                        <i class="fa fa-angle-double-right"></i>
+                        Cài đặt
+                    </a>
+                    <ul id="forms-collapse2" class="panel-collapse collapse ">
+                        <?php
+                        if (\Model\Permission::CheckPremision([\Model\User::Admin, \Model\User::QuanLy, md5(\Controller\quanlyusers::class . "_view")]) == true) {
+                        ?>
+                            <li class="<?php echo \Application::$_Controller == "quanlyusers" ? 'active' : '' ?>">
+                                <a href="/quanlyusers/">
+                                    <i class="fa fa-angle-right"></i> <span>Quản Lý Tài Khoản</span>
+                                </a>
+                            </li>
+                        <?php
+                        }
+                        ?>
+                        <li><a href="/options/index/loaihinhduan/">
+                                <i class="fa fa-angle-right"></i>Loại hình dự án
+                            </a>
+                        </li>
+                        <li><a href="/options/index/LoaiCayTrong/">
+                                <i class="fa fa-angle-right"></i>Loại cây trồng
+                            </a>
+                        </li>
+                        <li><a href="/options/index/LoaiVatNuoi/">
+                                <i class="fa fa-angle-right"></i>Loại vật nuôi
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="visible-xs">
+                    <a href="/backend/logout"><i class="fa fa-sign-out"></i> <span class="name">Đăng Xuất</span></a>
+                </li>
+            </ul>
+            <h5 class="hidden sidebar-nav-title">Labels <a class="action-link" href="#"><i class="glyphicon glyphicon-plus"></i></a></h5>
+            <ul class="hidden sidebar-labels">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-circle text-warning"></i>
+                        <span class="label-name">My Recent</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-circle text-gray"></i>
+                        <span class="label-name">Starred</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-circle text-danger"></i>
+                        <span class="label-name">Background</span>
+                    </a>
+                </li>
+            </ul>
+            <h5 class="hidden sidebar-nav-title">Dự án</h5>
+            <div class="hidden sidebar-alerts">
+                <div class="alert fade in">
+                    <a href="#" target="_self" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+                    <span class="text-white fw-semi-bold">Sales Report</span> <br>
+                    <div class="progress progress-xs mt-xs mb-0">
+                        <div class="progress-bar progress-bar-gray-light" style="width: 16%"></div>
+                    </div>
+                    <small>Calculating x-axis bias... 65%</small>
+                </div>
+                <div class="alert fade in">
+                    <a href="#" target="_self" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+                    <span class="text-white fw-semi-bold">Personal Responsibility</span> <br>
+                    <div class="progress progress-xs mt-xs mb-0">
+                        <div class="progress-bar progress-bar-danger" style="width: 23%"></div>
+                    </div>
+                    <small>Provide required notes</small>
+                </div>
+            </div>
+        </nav>
+    <?php
+    }
     public static function header()
     {
         $_module = Application::$_Module;
@@ -153,186 +227,164 @@ class Functions
         $action = Application::$_Action;
         $user = \Model\User::CurentUser();
     ?>
-
-        <header class="main-header">
-            <nav class="navbar navbar-static-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a href="/" class="navbar-brand"><b>Share </b>Investment</a>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+        <header class="page-header">
+            <div class="navbar">
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class="visible-phone-landscape">
+                        <a href="#" id="search-toggle">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" title="Messages" id="messages" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-comments"></i>
+                        </a>
+                        <ul id="messages-menu" class="dropdown-menu messages" role="menu">
+                            <li role="presentation">
+                                <a href="#" class="message">
+                                    <img src="/public/admin_blue/img/1.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Jane Hew</div>
+                                        <div class="text">
+                                            Hey, John! How is it going? ...
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="message">
+                                    <img src="/public/admin_blue/img/2.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Alies Rumiancaŭ</div>
+                                        <div class="text">
+                                            I'll definitely buy this template
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="message">
+                                    <img src="/public/admin_blue/img/3.jpg" alt="">
+                                    <div class="details">
+                                        <div class="sender">Michał Rumiancaŭ</div>
+                                        <div class="text">
+                                            Is it really Lore ipsum? Lore ...
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="text-align-center see-all">
+                                    See all messages <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" title="8 support tickets" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-group"></i>
+                            <span class="count">8</span>
+                        </a>
+                        <ul id="support-menu" class="dropdown-menu support" role="menu">
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="fa fa-bell-o"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        Check out this awesome ticket
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-warning"><i class="fa fa-question-circle"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        "What is the best way to get ...
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-success"><i class="fa fa-tag"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        This is just a simple notification
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-info"><i class="fa fa-info-circle"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        12 new orders has arrived today
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="support-ticket">
+                                    <div class="picture">
+                                        <span class="label label-important"><i class="fa fa-plus"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        One more thing that just happened
+                                    </div>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="text-align-center see-all">
+                                    See all tickets <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="hidden-xs dropdown">
+                        <a href="#" target="_self" title="Account" id="account" class="dropdown-toggle" data-toggle="dropdown">
+                            <img style="height: 40px;border-radius: 100%;" src="<?php echo $user->UserInfor(\Model\Users\UserInfor::HinhNhanVien)->Val; ?>" alt="<?php echo $user->Name; ?>">
+                        </a>
+                        <ul id="account-menu" class="dropdown-menu account" role="menu">
+                            <li role="presentation" class="account-picture">
+                                <img src="<?php echo $user->UserInfor(\Model\Users\UserInfor::HinhNhanVien)->Val; ?>" alt="<?php echo $user->Name; ?>">
+                                <?php echo $user->Name; ?>
+                            </li>
+                            <li role="presentation">
+                                <a href="/profile/" class="link">
+                                    <i class="fa fa-user"></i>
+                                    Tài khoản
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="/backend/logout/" class="link">
+                                    <i class="fa fa-sign-out"></i>
+                                    Đăng Xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="#" class="btn-navbar" data-toggle="collapse" data-target=".sidebar" title="">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </a>
+                    </li>
+
+                </ul>
+                <form id="search-form" class="navbar-form pull-right" role="search">
+                    <input type="search" class="form-control search-query" placeholder="Search...">
+                </form>
+                <!-- <div class="notifications pull-right">
+                    <div class="alert pull-right">
+                        <a href="#" class="close ml-xs" data-dismiss="alert">&times;</a>
+                        <i class="fa fa-info-circle mr-xs"></i> Check out Light Blue <a id="notification-link" href="#">settings</a> on the right!
                     </div>
-                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a href="/dautuchung/index/">Các khoản đầu tư </a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Dự Án
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/dautuchung/duan/index">Dự án </a></li>
-                                    <li><a href="/dautuchung/duan/post">Tạo dự án đất nền </a></li>
-                                    <li><a href="/dautuchung/duan/post1">Tạo dự án chung cư </a></li>
-                                    <li><a href="/dautuchung/duan/post2">Tạo dự án nông trại </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/dautuchung/giaodich/index">Ví và Giao dịch</a></li>
-                            <?php
-                            if (\Model\Permission::CheckPremision([\Model\User::Admin, \Model\User::QuanLy]) == true) {
-                            ?>
-                                <li class="dropdown <?php echo (\Application::$_Controller == "options" || \Application::$_Controller == "locations") ? 'active' : "" ?> ">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="fa fa-gears"></i>
-                                        <span>Cài Đặt Danh Mục</span>
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="/locations/index"><i class="fa fa-circle-o"></i> Tỉnh/Thành phố</a></li>
-                                        <li><a href="/options/index/gioitinh/"><i class="fa fa-circle-o"></i> Giới tính</a></li>
-                                        <li><a href="/options/index/loaihinhduan/"><i class="fa fa-circle-o"></i> Loại hình dự án</a></li>
-
-                                    </ul>
-                                </li>
-                            <?php
-                            }
-                            ?>
-                        </ul>
-                        <form action="/<?php echo  $_module ?>/<?php echo $controller ?>/<?php echo $action ?>/" class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" value="<?php echo  $_GET["keyword"] ?? "" ?>" name="keyword" class="form-control" id="navbar-search-input" placeholder="Tìm kiếm dự án">
-                            </div>
-                        </form>
-                    </div><!-- /.navbar-collapse -->
-                    <!-- Navbar Right Menu -->
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- Messages: style can be found in dropdown.less-->
-                            <li class="dropdown messages-menu">
-                                <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="label label-success">4</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">You have 4 messages</li>
-                                    <li>
-                                        <ul class="menu">
-                                            <li>
-                                                <!-- start message -->
-                                                <a href="#">
-                                                    <div class="pull-left">
-                                                        <!-- User Image -->
-                                                        <img src="/public/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                                    </div>
-                                                    <!-- Message title and timestamp -->
-                                                    <h4>
-                                                        Support Team
-                                                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                    </h4>
-                                                    <!-- The message -->
-                                                    <p>Why not buy a new awesome theme?</p>
-                                                </a>
-                                            </li><!-- end message -->
-                                        </ul><!-- /.menu -->
-                                    </li>
-                                    <li class="footer"><a href="#">See All Messages</a></li>
-                                </ul>
-                            </li><!-- /.messages-menu -->
-
-                            <!-- Notifications Menu -->
-                            <li class="dropdown notifications-menu">
-                                <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning">10</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">You have 10 notifications</li>
-                                    <li>
-                                        <!-- Inner Menu: contains the notifications -->
-                                        <ul class="menu">
-                                            <li>
-                                                <!-- start notification -->
-                                                <a href="#">
-                                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                                </a>
-                                            </li><!-- end notification -->
-                                        </ul>
-                                    </li>
-                                    <li class="footer"><a href="#">View all</a></li>
-                                </ul>
-                            </li>
-                            <!-- Tasks Menu -->
-                            <li class="dropdown tasks-menu">
-                                <!-- Menu Toggle Button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-flag-o"></i>
-                                    <span class="label label-danger">9</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">You have 9 tasks</li>
-                                    <li>
-                                        <!-- Inner menu: contains the tasks -->
-                                        <ul class="menu">
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <!-- Task title and progress text -->
-                                                    <h3>
-                                                        Design some buttons
-                                                        <small class="pull-right">20%</small>
-                                                    </h3>
-                                                    <!-- The progress bar -->
-                                                    <div class="progress xs">
-                                                        <!-- Change the css width attribute to simulate progress -->
-                                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">20% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li><!-- end task item -->
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">View all tasks</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- User Account Menu -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img onerror="this.src='/public/no-user.jpg'" src="<?php echo $user->UserInfor(\Model\Users\UserInfor::HinhNhanVien)->Val; ?>" class="user-image" alt="User Image">
-                                    <span class="hidden-xs"><?php echo $user->Name; ?></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="user-header">
-                                        <img onerror="this.src='/public/no-user.jpg'" src="<?php echo $user->UserInfor(\Model\Users\UserInfor::HinhNhanVien)->Val; ?>" class="img-circle" alt="User Image">
-                                        <p>
-                                            <?php echo $user->Name; ?> - <?php echo $user->Username; ?>
-                                            <small><?php echo $user->BODView(); ?></small>
-                                        </p>
-                                    </li>
-                                    <li class="user-footer" style="background-color: #a3a1a19e;">
-                                        <div class="pull-left">
-                                            <a href="/profile" class="btn btn-primary btn-flat">Tài Khoản</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="/backend/logout" class="btn btn-primary btn-flat">Thoát</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div><!-- /.navbar-custom-menu -->
-                </div>
-            </nav>
+                </div> -->
+            </div>
         </header>
-
 
     <?php
     }

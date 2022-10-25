@@ -8,7 +8,7 @@ class index extends \Application implements \Controller\IControllerBE
     public function __construct()
     {
         new \Controller\backend();
-        self::$_Theme = "backend";
+        self::$_ViewTheme = true;
     }
 
     public function index()

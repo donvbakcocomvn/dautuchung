@@ -11,9 +11,9 @@ if ($error != null) {
 $isCheck = isset($_COOKIE["GhiNhoMatKhau"]) ? "checked" : "";
 $taiKhoan = isset($_COOKIE["TaiKhoan"]) ? $_COOKIE["TaiKhoan"] : "";
 ?>
-<div class="login-logo">
+<!-- <div class="login-logo">
     <a href="">Đăng nhập</a>
-</div><!-- /.login-logo -->
+</div>
 <form action="" method="post">
     <div class="form-group has-feedback">
         <input type="text" value="<?php echo $taiKhoan; ?>" required="required" name="TaiKhoan" class="form-control" placeholder="Tài Khoản">
@@ -38,6 +38,48 @@ $taiKhoan = isset($_COOKIE["TaiKhoan"]) ? $_COOKIE["TaiKhoan"] : "";
 </form>
 </br>
 <div class="clearfix"></div>
-<summary class="form-text text-muted text-center ">
+<summary class="form-text text-muted  ">
     <a href="/index.php?controller=login&action=resetpass">Quên Mật Khẩu</a>
-</summary>
+</summary> -->
+<header class="text-align-center">
+    <h4>Đăng nhập</h4>
+</header>
+<div class="body">
+    <form class="no-margin" action="" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label for="email">Tài khoản</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input type="text" value="<?php echo $taiKhoan; ?>" required="required" name="TaiKhoan" class="form-control input-lg input-transparent" placeholder="Tài Khoản">
+                    <!-- <input id="email" type="email" class="form-control input-lg input-transparent" placeholder="Your Email"> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-lock"></i>
+                    </span>
+                    <input type="password" required="required" name="MatKhau" class="form-control input-lg input-transparent" placeholder="Mật Khẩu">
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-block btn-lg btn-danger">
+                <small>Đăng nhập</small>
+                <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+            </button>
+            <a class="forgot" href="/index.php?controller=login&action=resetpass">Quên Mật Khẩu</a>
+        </div>
+    </form>
+</div>
+<!-- <footer>
+    <div class="facebook-login">
+        <a href="">
+            <span><i class="fa fa-facebook-square fa-lg"></i> LogIn with Facebook</span>
+        </a>
+    </div>
+</footer> -->

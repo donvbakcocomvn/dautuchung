@@ -3,25 +3,15 @@ $itemGroups = new \Model\OptionsService();
 $item = $itemGroups->GetByKeyValue($_Params[0], "NameFunction");
 $item = new \Model\OptionsService($item);
 ?>
-<ol class="breadcrumb">
-    <li><a href="/backend">Dashboard</a></li>
-    <li><?php echo $item->Name; ?> </li>
-</ol>
-
-<div class="container-fluid">
-    <form method="get" action="">
-        <div class="form-group d-flex">
-             
-        </div>
-    </form>
-    <div class="box box-primary">
-        <div class="box-header">
-            <h3 class="box-title">Cài Đặt</h3>
-            <div class="box-tools">
+<div class="widget">
+    <div class="container-fluid">
+        <div class="header">
+            <div class="box-tools pull-right">
                 <a href="/options/post/<?php echo $_Params[0]; ?>/" class="btn btn-primary"><i class="fa fa-plus"></i></a>
             </div>
+            <h3>Cài Đặt</h3>
         </div>
-        <div class="box-body">
+        <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -39,13 +29,12 @@ $item = new \Model\OptionsService($item);
                     ?>
                             <tr>
                                 <th>
-                                    <a href="/options/put/<?php echo $_item->Id ?>">Sửa</a>
+                                    <a href="/options/put/<?php echo $_item->Id ?>/">Sửa</a>
                                 </th>
                                 <th><?php echo $k + 1 ?></th>
                                 <th><?php echo $_item->Val ?></th>
-                                <th><?php echo $_item->Name ?></th> 
+                                <th><?php echo $_item->Name ?></th>
                             </tr>
-
                     <?php
                         }
                     }
@@ -53,23 +42,25 @@ $item = new \Model\OptionsService($item);
                 </tbody>
             </table>
         </div>
-        <div class="box-footer">
-            <div class="d-flex">
+        <div>
+            <div class="row">
+                <div class="col-md-2">
+                    <?php
+                    \Model\FormCommon::Select(
+                        "",
+                        "",
+                        [10, 20, 50, 100],
+                        [
+                            "style" => "max-width:150px;",
+                            "class" => "form-control",
+                            "value" => $pageNumber,
+                            "onchange" => "SoDongHienThi(this.value)",
+                        ]
+                    )->render();
+                    ?>
+                </div>
                 <?php
-                \Model\FormCommon::Select(
-                    "",
-                    "",
-                    [10, 20, 50, 100],
-                    [
-                        "style" => "max-width:150px;",
-                        "class" => "form-control",
-                        "value" => $pageNumber,
-                        "onchange" => "SoDongHienThi(this.value)",
-                    ]
-                )->render();
-                ?>
-                <?php
-                $linkPhanTrang = "/options/index/?keyword={$params["keyword"]}&indexPage=[i]&pageNumber={$pageNumber}";
+                $linkPhanTrang = "/options/index/" . $_Params[0] . "/?keyword={$params["keyword"]}&indexPage=[i]&pageNumber={$pageNumber}";
                 echo \Model\Common::PhanTrang($total, $indexPage, $pageNumber, $linkPhanTrang);
                 ?>
             </div>
@@ -78,7 +69,7 @@ $item = new \Model\OptionsService($item);
 </div>
 <script type="text/javascript">
     var SoDongHienThi = function(evalue) {
-        var linkPhanTrang = '/options/index/?keyword=&indexPage=1&pageNumber=[j]';
+        var linkPhanTrang = '/options/index/<?php echo $_Params[0]; ?>/?keyword=&indexPage=1&pageNumber=[j]';
         linkPhanTrang = linkPhanTrang.replace("[j]", evalue);
         window.location.href = linkPhanTrang;
     }

@@ -2,48 +2,31 @@
 <html lang="vi">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login | Share Investment</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="/public/plugins/iCheck/square/blue.css">
+    <link href="/public/admin_blue/css/application.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="namdong92@gmail.com">
+    <meta charset="utf-8">
 </head>
 
-<body class="hold-transition <?php echo $_COOKIE["sidebar-toggle"] ?? "" ?> login-page">
-    <div class="login-box">
-
-        <div class="login-box-body">
-
+<body class="background-dark">
+    <div class="single-widget-container">
+        <section class="widget login-widget">
             <?php
             include $_Content;
             ?>
+        </section>
+    </div> 
+    <script src="/public/admin_blue/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/public/admin_blue/lib/jquery-pjax/jquery.pjax.js"></script>
+    <script src="/public/admin_blue/lib/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="/public/admin_blue/lib/widgster/widgster.js"></script>
+    <script src="/public/admin_blue/lib/underscore/underscore.js"></script>
 
-        </div>
-    </div>
-
-    <script src="/public/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
-    <!-- iCheck -->
-    <script src="/public/plugins/iCheck/icheck.min.js"></script>
-    <script>
-        $(function() {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
-            });
-        });
-    </script>
+    <script src="/public/admin_blue/js/app.js"></script>
+    <script src="/public/admin_blue/js/settings.js"></script>
 </body>
 
 </html>

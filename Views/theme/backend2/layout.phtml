@@ -1,6 +1,6 @@
 <?php
 
-use Views\theme\backend\Functions;
+use Views\theme\backend2\Functions;
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,31 +11,28 @@ use Views\theme\backend\Functions;
     ?>
 </head>
 
-<body ng-app="angApp" class="  hold-transition skin-blue layout-top-nav ">
-    <div class="wrapper">
+<body ng-app="angApp" class=" background-light ">
+    <?php
+    Functions::sidebar();
+    ?>
+    <div class="wrap">
         <?php
         Functions::header();
-        // Functions::leftaside();
+        $error = \Model\Error::GetError();
+        if ($error != null) {
         ?>
-        <div class="content-wrapper">
-            <?php
-            $error = \Model\Error::GetError();
-            if ($error != null) {
-            ?>
-                <div class="system-alert alert alert-<?php echo $error["Type"]; ?> alert-dismissible">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <?php echo $error["Content"]; ?>
-                </div>
-            <?php
-            }
-            ?>
+            <div class="system-alert alert alert-<?php echo $error["Type"]; ?> alert-dismissible">
+                <a href="#" target="_self" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <?php echo $error["Content"]; ?>
+            </div>
+        <?php
+        }
+        ?>
+        <section class="content">
             <?php
             include $_Content;
             ?>
-        </div>
-        <?php
-        Functions::footer();
-        ?>
+        </section>
     </div>
     <?php
     Functions::js();

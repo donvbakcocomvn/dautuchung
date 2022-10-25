@@ -7,8 +7,7 @@ class giaodich extends \Application implements \Controller\IControllerBE
 
     public function __construct()
     {
-        new \Controller\backend();
-        self::$_Theme = "backend";
+        new \Controller\backend(); 
     }
 
     public function index()

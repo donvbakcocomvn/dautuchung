@@ -52,8 +52,8 @@ $(function () {
         $(quanHuyenId).html(response);
         var data = $(quanHuyenId).data();
         $(quanHuyenId).val(data.value);
-        // $(quanHuyenId).select2();
         $(quanHuyenId).change();
+        $(quanHuyenId).select2();
       },
     });
     $(quanHuyenId).change(() => {
@@ -74,6 +74,7 @@ $(function () {
           var data = $(phuongXaId).data();
           $(phuongXaId).val(data.value);
           $(phuongXaId).change();
+
         },
       });
 
@@ -128,6 +129,7 @@ $(function () {
         var data = $("#quanHuyen").data();
         $("#quanHuyen").val(data.value);
         $("#quanHuyen").change();
+        $("#quanHuyen").select2();
       },
     });
   });
@@ -142,6 +144,7 @@ $(function () {
         $("#phuongXa").html(response);
         var data = $("#phuongXa").data();
         $("#phuongXa").val(data.value);
+
       },
     });
   });

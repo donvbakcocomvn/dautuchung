@@ -14,7 +14,7 @@ class login extends \Application
     public function __construct()
     {
 
-        self::$_Theme = "backend";
+        self::$_Theme = "backend2";
         self::$_Layout = "login";
         $_SESSION[QuanLy] = isset($_SESSION[QuanLy]) ? $_SESSION[QuanLy] : null;
         if ($_SESSION[QuanLy] != null) {
@@ -126,7 +126,7 @@ class login extends \Application
                 \Model\Mail::SendMail($title, $content, $mail);
             }
         }
-        $this->PartialView();
+        $this->View();
     }
 
     function verification()

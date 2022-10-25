@@ -4,17 +4,20 @@ namespace Controller;
 
 use Model\Users\FormUser;
 
-class quanlyusers extends \Application implements IControllerBE {
+class quanlyusers extends \Application implements IControllerBE
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         new backend();
-        self::$_Theme = "backend";
+        self::$_ViewTheme = true;
         \Model\Permission::Check([\Model\User::Admin, md5(quanlyusers::class . "_view")]);
-        //336bdbdba15a2836969cb534cc56f9df
+        //336bdbdba15a2836969cb534cc56f9df 
     }
 
-    function index() {
-//        echo md5(quanlyusers::class);
+    function index()
+    {
+        //        echo md5(quanlyusers::class);
         \Model\Permission::Check([\Model\User::Admin, md5(quanlyusers::class . "_view")]);
         $modelUsers = new \Model\UserService();
         $params["keyword"] = isset($_GET["keyword"]) ? \Model\Common::TextInput($_GET["keyword"]) : "";
@@ -33,7 +36,8 @@ class quanlyusers extends \Application implements IControllerBE {
         $this->View($data);
     }
 
-    public function delete() {
+    public function delete()
+    {
         \Model\Permission::Check([\Model\User::Admin, md5(quanlyusers::class . "_" . __FUNCTION__)]);
     }
 
@@ -41,7 +45,8 @@ class quanlyusers extends \Application implements IControllerBE {
      * them tài khoản
      * @param {type} parameter
      */
-    public function post() {
+    public function post()
+    {
         \Model\Permission::Check([\Model\User::Admin, md5(quanlyusers::class . "_" . __FUNCTION__)]);
         if (isset($_POST[\Model\Users\FormUser::$ElementsName])) {
             try {
@@ -103,7 +108,8 @@ class quanlyusers extends \Application implements IControllerBE {
      * sửa tài khoản
      * @param {type} parameter
      */
-    public function put() {
+    public function put()
+    {
 
         \Model\Permission::Check([\Model\User::Admin, md5(quanlyusers::class . "_" . __FUNCTION__)]);
         $userService = new \Model\UserService();
@@ -135,9 +141,9 @@ class quanlyusers extends \Application implements IControllerBE {
                     $itemDetail["Email"] = $modelUser["Email"];
                 }
                 $userService->Put($itemDetail);
-//            var_dump($itemDetail);
-//
-//            exit(); 
+                //            var_dump($itemDetail);
+                //
+                //            exit(); 
             } catch (\Exception $exc) {
                 new \Model\Error(\Model\Error::danger, $exc->getMessage());
             }
@@ -149,9 +155,10 @@ class quanlyusers extends \Application implements IControllerBE {
         $this->View(["user" => $user]);
     }
 
-    public function resetpassword() {
-//        b1: cập nhật mật khẩu
-//        
+    public function resetpassword()
+    {
+        //        b1: cập nhật mật khẩu
+        //        
 
         \Model\Permission::Check([\Model\User::Admin, md5(quanlyusers::class . "_put")]);
         $userService = new \Model\UserService();
@@ -165,9 +172,9 @@ class quanlyusers extends \Application implements IControllerBE {
                 $userService->Put($itemDetail);
             }
         }
-//        
-//        b2 gửi mail
-//         b3: quay lại trang sửa
+        //        
+        //        b2 gửi mail
+        //         b3: quay lại trang sửa
         \Model\Error::SetError(\Model\Error::success, "Cập nhật mật khẩu thành công");
         \Model\Common::ToUrl($_SERVER["HTTP_REFERER"]);
     }
@@ -176,7 +183,8 @@ class quanlyusers extends \Application implements IControllerBE {
      * phân quyền cho user
      * @param {type} parameter
      */
-    public function phanquyen() {
+    public function phanquyen()
+    {
         \Model\Permission::Check([\Model\User::Admin, md5(quanlyusers::class . "_put")]);
         if (isset($_POST["Users"])) {
             $danhSachRoles = $_POST["Rolesuser"];
@@ -187,14 +195,15 @@ class quanlyusers extends \Application implements IControllerBE {
         \Model\Common::ToUrl($_SERVER["HTTP_REFERER"]);
     }
 
-    function showkey() {
+    function showkey()
+    {
         $data = \Model\User::danhSachQuyen();
         $this->View($data);
     }
 
-    function install() {
+    function install()
+    {
         \Model\User::Install();
         \Model\Common::ToUrl("/index.php?controller=quanlyusers");
     }
-
 }

@@ -54,7 +54,7 @@ class Application
         if ($_module) {
             $_Content = __DIR__ . "/Module/{$_module}/Views/{$controller}/{$action}.phtml";
             if ($_ViewTheme != null) {
-                $_Content = __DIR__ . "/Views/theme/{$theme}/Module/{$_module}/Views/{$controller}/{$action}.phtml";
+                $_Content = __DIR__ . "/Views/theme/{$theme}/Module/{$_module}/{$controller}/{$action}.phtml";
             }
         }
         include __DIR__ . "/Views/theme/{$theme}/layout{$_layout}.phtml";

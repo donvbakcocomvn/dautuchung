@@ -13,7 +13,7 @@ class DuAnForm
 {
 
     static $properties = [
-        "class" => "form-control",
+        "class" => "form-control input-transparent",
         "oninput" => "this.setCustomValidity('')"
     ];
     static $ElementsName = "DuAnForm";
@@ -22,9 +22,22 @@ class DuAnForm
     {
         self::$FormData  = $formData;
     }
-    static public function GetFormData($name = "DuAnForm")
+    static public function GetFormData($name = null)
     {
+        if ($name == null) {
+            $name = self::$ElementsName;
+        }
         return self::$FormData[$name] ?? [];
+    }
+    static public function SetFormData($val)
+    {
+        self::$FormData[self::$ElementsName]  = $val;
+    }
+    public static function Id($val = null)
+    {
+        $val = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $name = self::SetName(__FUNCTION__);
+        return new FormRender(new Element\Hidden($name, $val));
     }
     public static function Phone($val = null)
     {
@@ -63,7 +76,6 @@ class DuAnForm
     public static function DiaChi($val = null)
     {
         $properties = self::$properties;
-
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
         $name = self::SetName(__FUNCTION__);
         return new FormRender(new Element\Textbox("Số Nhà, Đường", $name, $properties));
@@ -102,7 +114,7 @@ class DuAnForm
         $properties["data-value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
         $properties["data-tinhthanh"] = FormRender::GetValue(null, "TinhThanh", self::GetFormData());
         $properties["data-quanhuyen"] = FormRender::GetValue(null, "QuanHuyen", self::GetFormData());
-        $properties[FormRender::Required] = "true";
+        // $properties[FormRender::Required] = "true";
         $name = self::$ElementsName . "[" . __FUNCTION__ . "]";
         return new FormRender(new Element\Select("Phường xã", $name, [],  $properties));
     }
@@ -111,8 +123,9 @@ class DuAnForm
         $properties = self::$properties;
 
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $properties[FormRender::Required] = "true";
         $name = self::SetName(__FUNCTION__);
-        return new FormRender(new Element\Textbox("Tổng Giá Trị Dự Án", $name, $properties));
+        return new FormRender(new Element\Textbox("Tổng gá trị dự án", $name, $properties));
     }
     public static function DienTich($val = null)
     {
@@ -135,9 +148,30 @@ class DuAnForm
         $properties = self::$properties;
 
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $properties["ng-model"] = "LoaiHinhDuAn";
+        $properties["id"] = "id" . __FUNCTION__;
         $name = self::SetName(__FUNCTION__);
         $options = OptionsService::GetGroupsToSelect("loaihinhduan");
         return new FormRender(new Element\Select("Loại Hình", $name, $options, $properties));
+    }
+    public static function LoaiCayTrong($val = null)
+    {
+        $properties = self::$properties;
+
+        $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $name = self::SetName(__FUNCTION__);
+        $properties["id"] = "id" . __FUNCTION__;
+        $options = OptionsService::GetGroupsToSelect("LoaiCayTrong");
+        return new FormRender(new Element\Select("Loại cây trồng", $name, $options, $properties));
+    }
+    public static function LoaiVatNuoi($val = null)
+    {
+        $properties = self::$properties;
+        $properties["id"] = "id" . __FUNCTION__;
+        $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
+        $name = self::SetName(__FUNCTION__);
+        $options = OptionsService::GetGroupsToSelect("LoaiVatNuoi");
+        return new FormRender(new Element\Select("Loại vật nuôi", $name, $options, $properties));
     }
     public static function ChieuNgang($val = null)
     {
@@ -177,24 +211,25 @@ class DuAnForm
 
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
         $properties["type"] = "date";
+        $properties[FormRender::Required] = "";
         $name = self::SetName(__FUNCTION__);
         return new FormRender(new Element\Textbox("Thời Gian Bắt Đầu", $name, $properties));
     }
     public static function ThoiGianDauTu($val = null)
     {
         $properties = self::$properties;
-
+        $properties[FormRender::Required] = "";
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
         $name = self::SetName(__FUNCTION__);
-        return new FormRender(new Element\Textbox("THỜI GIAN ĐẦU TƯ (Tháng)", $name, $properties));
+        return new FormRender(new Element\Textbox("Thời gian đầu tư (Tháng)", $name, $properties));
     }
     public static function LaiXuatCoBan($val = null)
     {
         $properties = self::$properties;
-
+        $properties[FormRender::Required] = "";
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
         $name = self::SetName(__FUNCTION__);
-        return new FormRender(new Element\Textbox("LÃI SUẤT CƠ BẢN (%/năm)", $name, $properties));
+        return new FormRender(new Element\Textbox("Lãi xuất cơ bản (%/năm)", $name, $properties));
     }
     public static function XuatThamGia($val = null)
     {
@@ -203,6 +238,7 @@ class DuAnForm
         $properties["value"] = FormRender::GetValue($val, __FUNCTION__, self::GetFormData());
         $properties["type"] = "number";
         $properties["min"] = "0";
+        $properties[FormRender::Required] = "";
         $properties[FormRender::onInvalid] = FormRender::setinvalid("Số gói không hợp lệ lớn hơn 0");
         $name = self::SetName(__FUNCTION__);
         return new FormRender(new Element\Textbox("Số gói đầu tư", $name, $properties));

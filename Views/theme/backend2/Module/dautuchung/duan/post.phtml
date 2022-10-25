@@ -2,17 +2,19 @@
 
 use Module\dautuchung\Model\DuAnForm;
 
+$duan = json_decode(file_get_contents("data/duan.json"));
+
 ?>
-<form method="POST" action="">
-    <div class="container ">
-        <div class="box box-info">
-            <div class="box-header">
-                <h3>Tạo dự án nộng trại</h3>
+<section class="content">
+    <form method="POST" action="" id="validation-form">
+        <div class="container ">
+            <div class="header">
+                <h3>Tạo dự án</h3>
             </div>
-            <div class="box-body">
-                <div class="col-md-12">
+            <div class=" ">
+                <div class=" ">
                     <fieldset>
-                        <legend><strong>Thông tin chung</strong></legend>
+                        <legend>Thông tin chung</legend>
                         <div class=" ">
                             <div class="row">
                                 <div class="col-md-12">
@@ -50,17 +52,22 @@ use Module\dautuchung\Model\DuAnForm;
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend><strong>Quy mô dự án</strong></legend>
+                        <legend>Quy mô dự án</legend>
                         <div class=" ">
                             <div class="row">
                                 <div class="col-md-4">
                                     <?php
-                                    DuAnForm::DienTichHa()->renderHTML();
+                                    DuAnForm::DienTich()->renderHTML();
                                     ?>
                                 </div>
                                 <div class="col-md-4">
                                     <?php
-                                    DuAnForm::LoaiHinhDuAn()->renderHTML();
+                                    DuAnForm::ChieuNgang()->renderHTML();
+                                    ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php
+                                    DuAnForm::ChieuDoc()->renderHTML();
                                     ?>
                                 </div>
                             </div>
@@ -68,7 +75,7 @@ use Module\dautuchung\Model\DuAnForm;
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend> <strong>Địa chỉ</strong></legend>
+                        <legend>Địa chỉ</legend>
                         <div class=" ">
                             <div class="row">
                                 <div class="col-md-12">
@@ -95,18 +102,15 @@ use Module\dautuchung\Model\DuAnForm;
 
                         </div>
                     </fieldset>
-                </div>
-                <div class="col-md-12">
                     <?php
                     DuAnForm::MoTa()->renderHTML();
                     ?>
                 </div>
-            </div><!-- /.box-body -->
+            </div>
             <div class="box-footer">
                 <button class="btn pull-right btn-success">Tạo Dự Án</button>
             </div>
         </div>
-    </div>
-</form>
-
+    </form>
+</section>
 <script src="/public/TinhThanh/tinhthanh.js"></script>

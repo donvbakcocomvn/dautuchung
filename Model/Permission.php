@@ -2,13 +2,15 @@
 
 namespace Model;
 
-class Permission {
+class Permission
+{
 
-    public function __construct() {
-        
+    public function __construct()
+    {
     }
 
-    public static function Check($param0, $param1=[]) {
+    public static function Check($param0, $param1 = [])
+    {
         $kt = User::CurentUser()->CheckPremision($param0, $param1);
         /**
          * không có quyền
@@ -18,11 +20,11 @@ class Permission {
             exit("Bạn không có quyền trên đường dẫn này.");
         }
     }
-    public static function CheckPremision($param0, $param1=[]) {
-        if(!is_array($param0)){
+    public static function CheckPremision($param0, $param1 = [])
+    {
+        if (!is_array($param0)) {
             $param0 = [$param0];
         }
-        return User::CurentUser()->CheckPremision($param0, $param1); 
+        return User::CurentUser()->CheckPremision($param0, $param1);
     }
-
 }

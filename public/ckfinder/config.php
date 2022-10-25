@@ -24,11 +24,12 @@ error_reporting(0);
  */
 include_once __DIR__ . '/../../config.php';
 
-function CheckAuthentication() {
-    if (isset($_SESSION[QuanLy])) {
-        return $_SESSION[QuanLy];
-    }
-    return false;
+function CheckAuthentication()
+{
+  if (isset($_SESSION[QuanLy])) {
+    return $_SESSION[QuanLy];
+  }
+  return false;
 }
 
 // LicenseKey : Paste your license key here. If left blank, CKFinder will be
@@ -61,95 +62,48 @@ $config['LicenseKey'] = 'R3VSXSRLMJK1ML7YAD365LXH78KVLTLF';
 
 $baseUrluser = __DIR__ . '/../userfiles/' . \Model\User::CurentUser()->Username . "/";
 if (!is_dir($baseUrluser)) {
-    mkdir($baseUrluser, 0777);
-}   
-
-if (\Model\PathCkfinder::Get()!=null) {
-    $baseUrl = \Model\PathCkfinder::Get();
-} else {
-    $baseUrl = '/public/userfiles/' . \Model\User::CurentUser()->Username . "/";
+  mkdir($baseUrluser, 0777);
 }
-/*
-  $baseDir : the path to the local directory (in the server) which points to the
-  above $baseUrl URL. This is the path used by CKFinder to handle the files in
-  the server. Full write permissions must be granted to this directory.
 
-  Examples:
-  // You may point it to a directory directly:
-  $baseDir = '/home/login/public_html/ckfinder/files/';
-  $baseDir = 'C:/SiteDir/CKFinder/userfiles/';
-
-  // Or you may let CKFinder discover the path, based on $baseUrl.
-  // WARNING: resolveUrl() *will not work* if $baseUrl does not start with a slash ("/"),
-  // for example if $baseDir is set to  http://example.com/ckfinder/files/
-  $baseDir = resolveUrl($baseUrl);
-
-  ATTENTION: The trailing slash is required.
- */
+if (\Model\PathCkfinder::Get() != null) {
+  $baseUrl = \Model\PathCkfinder::Get();
+} else {
+  $baseUrl = '/public/userfiles/' . \Model\User::CurentUser()->Username . "/";
+}
 $baseDir = resolveUrl($baseUrl);
 
-/*
- * ### Advanced Settings
- */
-
-/*
-  Thumbnails : thumbnails settings. All thumbnails will end up in the same
-  directory, no matter the resource type.
- */
-$config['Thumbnails'] = Array(
-    'url' => $baseUrl . '_thumbs',
-    'directory' => $baseDir . '_thumbs',
-    'enabled' => true,
-    'directAccess' => false,
-    'maxWidth' => 100,
-    'maxHeight' => 100,
-    'bmpSupported' => false,
-    'quality' => 80);
-
-/*
-  Set the maximum size of uploaded images. If an uploaded image is larger, it
-  gets scaled down proportionally. Set to 0 to disable this feature.
- */
-$config['Images'] = Array(
-    'maxWidth' => 1600,
-    'maxHeight' => 1200,
-    'quality' => 80);
-
-/*
-  RoleSessionVar : the session variable name that CKFinder must use to retrieve
-  the "role" of the current user. The "role", can be used in the "AccessControl"
-  settings (bellow in this page).
-
-  To be able to use this feature, you must initialize the session data by
-  uncommenting the following "session_start()" call.
- */
+$config['Thumbnails'] = array(
+  'url' => $baseUrl . '_thumbs',
+  'directory' => $baseDir . '_thumbs',
+  'enabled' => true,
+  'directAccess' => false,
+  'maxWidth' => 100,
+  'maxHeight' => 100,
+  'bmpSupported' => false,
+  'quality' => 80
+);
+ 
+$config['Images'] = array(
+  'maxWidth' => 1600,
+  'maxHeight' => 1200,
+  'quality' => 80
+);
+ 
 $config['RoleSessionVar'] = 'CKFinder_UserRole';
-//session_start();
-
-/*
-  AccessControl : used to restrict access or features to specific folders.
-
-  Many "AccessControl" entries can be added. All attributes are optional.
-  Subfolders inherit their default settings from their parents' definitions.
-
-  - The "role" attribute accepts the special '*' value, which means
-  "everybody".
-  - The "resourceType" attribute accepts the special value '*', which
-  means "all resource types".
- */
-
-$config['AccessControl'][] = Array(
-    'role' => '*',
-    'resourceType' => '*',
-    'folder' => '/',
-    'folderView' => true,
-    'folderCreate' => true,
-    'folderRename' => true,
-    'folderDelete' => true,
-    'fileView' => true,
-    'fileUpload' => true,
-    'fileRename' => true,
-    'fileDelete' => true);
+  
+$config['AccessControl'][] = array(
+  'role' => '*',
+  'resourceType' => '*',
+  'folder' => '/',
+  'folderView' => true,
+  'folderCreate' => true,
+  'folderRename' => true,
+  'folderDelete' => true,
+  'fileView' => true,
+  'fileUpload' => true,
+  'fileRename' => true,
+  'fileDelete' => true
+);
 
 /*
   For example, if you want to restrict the upload, rename or delete of files in
@@ -197,21 +151,23 @@ $config['AccessControl'][] = Array(
  */
 $config['DefaultResourceTypes'] = '';
 
-$config['ResourceType'][] = Array(
-    'name' => 'Files',
-    'url' => $baseUrl . 'files',
-    'directory' => $baseDir . 'files',
-    'maxSize' => 0,
-    'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
-    'deniedExtensions' => 'php');
+$config['ResourceType'][] = array(
+  'name' => 'Files',
+  'url' => $baseUrl . 'files',
+  'directory' => $baseDir . 'files',
+  'maxSize' => 0,
+  'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
+  'deniedExtensions' => 'php,exe'
+);
 
-$config['ResourceType'][] = Array(
-    'name' => 'Images',
-    'url' => $baseUrl . 'images',
-    'directory' => $baseDir . 'images',
-    'maxSize' => 0,
-    'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
-    'deniedExtensions' => 'php');
+$config['ResourceType'][] = array(
+  'name' => 'Images',
+  'url' => $baseUrl . 'images',
+  'directory' => $baseDir . 'images',
+  'maxSize' => 0,
+  'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
+  'deniedExtensions' => 'php,exe'
+);
 
 
 /*
@@ -279,14 +235,14 @@ $config['HtmlExtensions'] = array('html', 'htm', 'xml', 'js');
   The * and ? wildcards are accepted.
   ".*" disallows the creation of folders starting with a dot character.
  */
-$config['HideFolders'] = Array(".*", "CVS");
+$config['HideFolders'] = array(".*", "CVS");
 
 /*
   Files to not display in CKFinder, no matter their location.
   No paths are accepted, only the file name, including extension.
   The * and ? wildcards are accepted.
  */
-$config['HideFiles'] = Array(".*");
+$config['HideFiles'] = array(".*");
 
 /*
   After file is uploaded, sometimes it is required to change its permissions

@@ -3,9 +3,9 @@
     <li> Quản Lý Tài Khoản </li>
 </ol>
 
-<div class="container-fluid">
-    <div class="box box-primary">
-        <div class="box-header">
+<div class="widget">
+    <div class=" ">
+        <div class=" ">
             <form method="get" action="">
                 <div class="form-group d-flex">
                     <input class="form-control" name="controller" value="quanlyusers" type="hidden">
@@ -17,14 +17,13 @@
                 </div>
             </form>
         </div>
-        <div class="box-header">
-            <h3 class="box-title">Danh Sách Tài Khoản</h3>
-            <div class="box-tools">
+        <div class=" ">
+            <h3 class=" ">Danh Sách Tài Khoản</h3>
+            <div class=" ">
                 <?php
                 \Model\FormRender::HuongDan("danhsachuser", "Hướng dẫn quản lý tài khoản");
                 echo Model\User::btnThem();
                 ?>
-
             </div>
         </div>
         <div class="box-body">

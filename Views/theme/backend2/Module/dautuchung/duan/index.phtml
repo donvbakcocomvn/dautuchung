@@ -1,24 +1,13 @@
 <?php
-$duan = json_decode(file_get_contents("data/duan.json")); 
+$duan = json_decode(file_get_contents("data/duan.json"));
 ?>
-<!-- <section class="content-header">
-    <h1>
-        Dự án
-        <small>Danh sách dự án</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a href="/"><i class="fa fa-list"></i> Danh sách dự án</a></li>
-    </ol>
-</section> -->
-<section class="content">
-    <div class="row">
+
+<section class=" ">
+    <div class="row ">
         <?php
         foreach ($duan as $key => $value) {
-
         ?>
             <div class="col-md-6">
-
                 <div class="box box-widget widget-user">
                     <div class="widget-user-header bg-light-blue" style="height: auto;padding: 0px;">
                         <div class="row">
@@ -127,24 +116,7 @@ $duan = json_decode(file_get_contents("data/duan.json"));
                                     <span class=" badge bg-green">Thực tế</span>
                                 </h4>
                             </div>
-                            <!-- <div class="col-xs-2 border-right">
-                                <div class="description-block">
-                                    <span class="description-text">Tổng số thu hoạch (kg)</span>
-                                    <h5 class="description-header">
-                                        <?php echo $value->ThucTe->TongThuHoach ?? "" ?>
-                                    </h5>
 
-                                </div>
-                            </div>
-                            <div class="col-xs-2 border-right">
-                                <div class="description-block">
-                                    <span class="description-text">Giá bán</span>
-                                    <h5 class="description-header">
-                                        <?php echo $value->ThucTe->GiaBan ?? "" ?>
-                                    </h5>
-
-                                </div>
-                            </div> -->
                             <div class="col-xs-3 border-right">
                                 <div class="description-block">
                                     <span class="description-text">Tổng doanh thu</span>

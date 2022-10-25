@@ -29,7 +29,7 @@ class backend extends \Application {
             \Model\Common::ToUrl(LoginPage);
             //
         }
-        self::$_Theme = "backend";
+        self::$_Theme = "backend2";
         /**
          * đang nhap thanh cong
          * @param {type} parameter

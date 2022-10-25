@@ -1,8 +1,8 @@
-var app = angular.module('angApp', ["ngRoute", "ngSanitize"]);
+var app = angular.module('angApp', ["ngSanitize"]);
 
 function appInterceptor() {
     return {
-        request: function (config) { 
+        request: function (config) {
             config.headers["Authorization"] = "Bearer admin";
             config.headers["Content-Type"] = "application/x-www-form-urlencoded";
             return config;
@@ -19,6 +19,6 @@ function appInterceptor() {
     }
 }
 app.factory('appInterceptor', appInterceptor)
-        .config(function ($httpProvider) {
-            $httpProvider.interceptors.push('appInterceptor');
-        });
+    .config(function ($httpProvider) {
+        $httpProvider.interceptors.push('appInterceptor');
+    });
