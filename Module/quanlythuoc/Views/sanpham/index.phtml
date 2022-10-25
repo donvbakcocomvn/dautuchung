@@ -1,0 +1,130 @@
+<ol class="breadcrumb">
+    <li><a href="/index.php?controller=backend">Home</a></li>
+    <li> Danh Sách Thuốc Trong Kho </li>
+</ol>
+
+<div class="container-fluid" ng-controller="searchCtrl">
+    <div class="clearfix">
+        <div class="box box-primary">
+            <div class="box-header">
+                <div class="">
+                    <form method="get" action="/quanlythuoc/sanpham/index/">
+                        <div class="row">
+                            <div class="col-sm-10 form-group">
+                                <?php
+                                \Model\FormSearch::KeyWordThuoc($_GET['keyword'] ?? null)->renderHtml2(null, null, 'glyphicon glyphicon-repeat form-control-feedback');
+                                ?>
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <div class="form-group has-success has-feedback">
+                                    <label for="inputSuccess2" class="text-capitalize"><em>Nhấn vào đây&nbsp; </em><i class="fa fa-check"></i></label>
+                                    <button type="submit" style="border-radius: 5px;" class="form-control btn btn-success" name="btnTim" id="keyword">
+                                        <i class="fa fa-search"></i>&nbsp; Tìm kiếm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <hr style="border-top: 2px solid #00a65a; margin-top:0px" width="90%" noshade="noshade">
+                </div>
+            </div>
+            <div class="box-header">
+                <h3 class="box-title">Danh Sách Thuốc</h3>
+                <div class="box-tools">
+                    <?php
+
+                    use Model\Common;
+                    use Model\FormRender;
+                    use Module\quanlythuoc\Model\SanPham;
+                    // Module\quanlythuoc\Model\btnHtml::btnDongBoSL();
+                    Module\quanlythuoc\Model\btnHtml::btnImportSanPham();
+                    Module\quanlythuoc\Model\btnHtml::btnExportSanPham();
+                    Module\quanlythuoc\Model\btnHtml::btnThemSanPham();
+                    \Model\FormRender::HuongDan("danhsachthuoc", "Hướng dẫn thuốc")
+                    ?>
+                </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th>STT</th>
+                            <th>Mã thuốc</th>
+                            <th>Tên thuốc</th>
+                            <th>Tổng Nhập</th>
+                            <th>Tổng Xuất</th>
+                            <th>Tồn Kho</th>
+                            <th>Tổng</th>
+                            <th>Giá nhập</th>
+                            <th>Giá bán</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($items as $index => $item) {
+                            $_item = new SanPham($item);
+                            // var_dump($_item);
+                        ?>
+                            <tr>
+                                <td style="width: 150px;">
+                                    <div class="btn-tools">
+                                        <?php
+                                        echo Module\quanlythuoc\Model\btnHtml::btnSuaSanPham($_item->Id);
+                                        echo Module\quanlythuoc\Model\btnHtml::btnXoaSanPham($_item->Id);
+                                        echo Module\quanlythuoc\Model\btnHtml::btnChiTietSanPham($_item->Id);
+                                        ?>
+                                    </div>
+
+                                </td>
+                                <td><?php echo (($indexPage - 1) * $pageNumber) + $index + 1; ?></td>
+                                <td><?php echo $_item->Id; ?></td>
+                                <td><?php echo $_item->Name; ?></td>
+                                <td><?php echo $_item->SLNhap; ?></td>
+                                <td><?php echo $_item->SLXuat; ?></td>
+                                <td><?php echo $_item->SLHienTai; ?></td>
+                                <td><?php echo $_item->Soluong; ?></td>
+                                <!-- <td><?php echo $_item->CachDungThuoc(); ?></td> -->
+                                <!-- <td><?php echo $_item->IdLoaiThuoc()->Name; ?></td> -->
+                                <!-- <th><?php echo $_item->DonViQuyDoi(); ?></th> -->
+                                <td><?php echo Common::ViewPrice($_item->Gianhap); ?></td>
+                                <td><?php echo Common::ViewPrice($_item->Giaban); ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+                <div class="box-footer">
+                    <div class="d-flex">
+                        <?php
+                        \Model\FormCommon::Select(
+                            "",
+                            "",
+                            [10, 20, 50, 100],
+                            [
+                                "style" => "max-width:150px;",
+                                "class" => "form-control",
+                                "value" => $pageNumber,
+                                "onchange" => "SoDongHienThi(this.value)",
+                            ]
+                        )->render();
+                        ?>
+                        <?php
+                        $linkPhanTrang = "/index.php?module=quanlythuoc&controller=sanpham&action=index&keyword={$params["keyword"]}&indexPage=[i]&pageNumber={$pageNumber}";
+                        echo \Model\Common::PhanTrang($total, $indexPage, $pageNumber, $linkPhanTrang);
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    var SoDongHienThi = function(evalue) {
+        var linkPhanTrang = '/index.php?module=quanlythuoc&controller=sanpham&action=index&indexPage=1&pageNumber=[j]';
+        linkPhanTrang = linkPhanTrang.replace("[j]", evalue);
+        window.location.href = linkPhanTrang;
+    }
+</script>

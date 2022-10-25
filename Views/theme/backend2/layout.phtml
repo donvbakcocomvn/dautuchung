@@ -1,0 +1,42 @@
+<?php
+
+use Views\theme\backend2\Functions;
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?php
+    Functions::head();
+    ?>
+</head>
+
+<body ng-app="angApp" class=" background-light ">
+    <?php
+    Functions::sidebar();
+    ?>
+    <div class="wrap">
+        <?php
+        Functions::header();
+        $error = \Model\Error::GetError();
+        if ($error != null) {
+        ?>
+            <div class="system-alert alert alert-<?php echo $error["Type"]; ?> alert-dismissible">
+                <a href="#" target="_self" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <?php echo $error["Content"]; ?>
+            </div>
+        <?php
+        }
+        ?>
+        <section class="content">
+            <?php
+            include $_Content;
+            ?>
+        </section>
+    </div>
+    <?php
+    Functions::js();
+    ?>
+</body>
+
+</html>

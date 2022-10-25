@@ -1,0 +1,191 @@
+<ol class="breadcrumb">
+    <li><a href="/backend">Dashboard</a></li>
+    <li> Tài Khoản </li>
+</ol>
+<?php
+
+use Model\FormRender;
+
+$modelUser = Model\User::CurentUser();
+?>
+<div class="widget">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <div role="tabpanel">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#home" target="_self" aria-controls="home" role="tab" data-toggle="tab">
+                                    <i class="fa fa-info"></i>
+                                    Thông tin chung
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab" target="_self" aria-controls="tab" role="tab" data-toggle="tab">
+                                    <i class="fa fa-shield"></i>
+                                    Bảo Mật</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#xacminh" target="_self" aria-controls="tab" role="tab" data-toggle="tab">
+                                    <i class="fa fa-edit"></i>
+                                    Xác minh
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="xacminh">
+                                <form action="" method="POST">
+                                    <div class=" ">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <fieldset>
+                                                        <legend>Mặt Trước CCCD</legend>
+                                                        <?php
+                                                        \Model\Users\FormUserInfor::HinhMatTruocCMND($modelUser->UserInfor("HinhMatTruocCMND")->Val)->render();
+                                                        ?>
+                                                        <img onerror="this.src='/public/no-user.jpg'" style="max-height: 200px;" class="img center-block img-responsive" id="imgHinhMatTruocCMND" src="<?php echo $modelUser->UserInfor(Model\Users\UserInfor::HinhMatTruocCMND)->Val; ?>">
+                                                        <button class="btn btn-primary" type="button" onclick="BrowseServer('idHinhMatTruocCMND', 'imgHinhMatTruocCMND')">Chọn Hình</button>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <fieldset>
+                                                        <legend>Mặt Sau CCCD</legend>
+                                                        <?php
+                                                        \Model\Users\FormUser::Id($modelUser->Id)->render();
+                                                        \Model\Users\FormUserInfor::HinhMatSauCMND($modelUser->UserInfor("HinhMatSauCMND")->Val)->render();
+                                                        ?>
+                                                        <img onerror="this.src='/public/no-user.jpg'" style="max-height: 200px;" class="img center-block img-responsive" id="imgHinhMatSauCMND" src="<?php echo $modelUser->UserInfor(Model\Users\UserInfor::HinhMatSauCMND)->Val; ?>">
+                                                        <button class="btn btn-primary" type="button" onclick="BrowseServer('IdHinhMatSauCMND', 'imgHinhMatSauCMND')">Chọn Hình</button>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <?php
+                                            \Model\Users\FormUser::Id($modelUser->Id)->render();
+                                            ?>
+                                            <div class="text-right">
+                                                <button class="btn btn-warning" type="reset">Làm Lại</button>
+                                                <!-- <button class="btn btn-success">Lưu</button> -->
+                                                <button class="btn btn-success" name="LuuThoatXacMinh">Lưu</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <form action="" method="POST">
+                                    <div class=" ">
+                                        <div class="col-md-4">
+                                            <div class="text-center">
+                                                <img onerror="this.src='/public/no-user.jpg'" style="max-height: 200px;" class="img center-block img-responsive" id="imgContent" src="<?php echo $modelUser->UserInfor(Model\Users\UserInfor::HinhNhanVien)->Val; ?>">
+                                                <?php
+                                                \Model\Users\FormUserInfor::HinhNhanVien($modelUser->UserInfor("HinhNhanVien")->Val)->render();
+                                                ?>
+                                                <button class="btn btn-success" type="button" onclick="BrowseServer('idHinhNhanVien', 'imgContent')">Chọn Hình</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <fieldset>
+                                                <legend>Thông Tin Chung</legend>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <?php
+                                                        \Model\Users\FormUser::Id($modelUser->Id)->render();
+                                                        \Model\Users\FormUser::Username($modelUser->Username)->renderHTML();
+                                                        \Model\Users\FormUser::Name($modelUser->Name)->renderHTML();
+                                                        \Model\Users\FormUser::Email($modelUser->Email)->renderHTML();
+                                                        \Model\Users\FormUserInfor::HoChieu($modelUser->UserInfor("HoChieu")->Val)->renderHTML();
+                                                        \Model\Users\FormUserInfor::GioiTinh($modelUser->UserInfor("GioiTinh")->Val)->renderHTML();
+
+                                                        ?>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <?php
+                                                        \Model\Users\FormUser::BOD($modelUser->BODFomatDB())->renderHTML();
+                                                        \Model\Users\FormUserInfor::CCCD($modelUser->UserInfor("CCCD")->Val)->renderHTML();
+                                                        \Model\Users\FormUserInfor::CMND($modelUser->UserInfor("CMND")->Val)->renderHTML();
+                                                        \Model\Users\FormUserInfor::Phone($modelUser->UserInfor("Phone")->Val)->renderHTML();
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset>
+                                                <legend>Địa chỉ</legend>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <?php
+                                                        \Model\Users\FormUserInfor::DiaChi($modelUser->UserInfor("DiaChi")->Val)->renderHTML();
+                                                        ?>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <?php
+                                                        \Model\Users\FormUserInfor::TinhThanh($modelUser->UserInfor("TinhThanh")->Val)->renderHTML();
+                                                        ?>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <?php
+                                                        \Model\Users\FormUserInfor::QuanHuyen($modelUser->UserInfor("QuanHuyen")->Val)->renderHTML();
+                                                        ?>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <?php
+                                                        \Model\Users\FormUserInfor::PhuongXa($modelUser->UserInfor("PhuongXa")->Val)->renderHTML();
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <?php
+                                            \Model\Users\FormUser::Id($modelUser->Id)->render();
+                                            ?>
+                                            <div class="text-right">
+                                                <button class="btn btn-warning" type="reset">Làm Lại</button>
+                                                <!-- <button class="btn btn-success">Lưu</button> -->
+                                                <button class="btn btn-success" name="LuuThoat">Lưu</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab">
+                                <div class="col-md-4">
+                                    <form method="POST" action="">
+                                        <div class="form-group">
+                                            <label>Mật Khẩu Cũ</label>
+                                            <input required="" class="form-control" name="Password" value="" type="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mật Khẩu Mới</label>
+                                            <input required="" class="form-control" name="NewPassword" value="" type="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nhập Lại Mật Khẩu</label>
+                                            <input required="" class="form-control" name="RePassword" value="" type="password">
+                                        </div>
+
+                                        <button class="btn btn-success">Lưu thông tin</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="/public/TinhThanh/tinhthanh.js"></script>
