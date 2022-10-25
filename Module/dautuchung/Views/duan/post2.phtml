@@ -1,0 +1,128 @@
+<?php
+
+use Module\dautuchung\Model\DuAnForm;
+
+$duan = json_decode(file_get_contents("data/duan.json"));
+
+?>
+
+<section class="content-header">
+    <h1>
+        Dự án
+        <small>Tạo dự án nộng trại</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="/"><i class="fa fa-list"></i> Tạo dự án nộng trại</a></li>
+    </ol>
+</section>
+<section class="content">
+    <form method="POST" action="">
+        <div class="container ">
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Tạo dự án nộng trại</h3>
+                </div>
+                <div class="box-body">
+                    <!-- Color Picker -->
+                    <div class="col-md-12">
+
+                        <fieldset>
+                            <legend><strong>Thông tin chung</strong></legend>
+                            <div class=" ">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <?php
+                                        DuAnForm::Name()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php
+                                        DuAnForm::GiaTriDuAn()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <?php
+                                        DuAnForm::XuatThamGia()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::ThoiGianBatDau()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::ThoiGianDauTu()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::LaiXuatCoBan()->renderHTML();
+                                        ?>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend><strong>Quy mô dự án</strong></legend>
+                            <div class=" ">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::DienTichHa()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::LoaiHinhDuAn()->renderHTML();
+                                        ?>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend> <strong>Địa chỉ</strong></legend>
+                            <div class=" ">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <?php
+                                        DuAnForm::DiaChi()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::TinhThanh()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::QuanHuyen()->renderHTML();
+                                        ?>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <?php
+                                        DuAnForm::PhuongXa()->renderHTML();
+                                        ?>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                        <?php
+                        DuAnForm::MoTa()->renderHTML();
+                        ?>
+                    </div>
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    <button class="btn pull-right btn-success">Tạo Dự Án</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<script src="/public/TinhThanh/tinhthanh.js"></script>
