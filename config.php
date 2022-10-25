@@ -17,7 +17,7 @@ define("prefixTable", "lap1_");
 define("QuanLy", "quanly");
 define("LoginPage", "/login");
 global $INI;
-if (false) {
+if (true) {
     $INI['host'] = "localhost";
     $INI['username'] = "jagudavthosting_si";
     $INI['password'] = "zaq@123Abc456";
