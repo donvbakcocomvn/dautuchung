@@ -1,0 +1,34 @@
+ <div class="login-box">
+     <div class="login-box-body" style="border-radius: 15px ;">
+         <p class="login-box-msg h3">Quên Mật Khẩu</p>
+         <form action="" method="post" id="FormCheck">
+             <label for="" class="text-center">Nhập Email và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu của bạn.</label>
+             <div class="form-group has-feedback text-center" style="margin: 20px 0;">
+                 <input type="email" required name="mail" class="form-control input-lg input-transparent" placeholder="Nhập Email Của Bạn...">
+                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                 <small class="form-text text-muted ">Chúng tôi sẽ không bao giờ chia sẻ email của bạn với bất kỳ ai</small>
+             </div>
+             <div class="row">
+                 <div class="col-xs-12 center">
+                     <button type="submit" id="sendmail" onclick="disableBtn()" name="sendmail" style="margin:auto;" class="btn btn-block btn-lg btn-success">Gửi Email</button>
+                 </div>
+             </div>
+             <br>
+             <summary class="form-text text-muted ">Bạn Đã Có Tài Khoản Rồi Đúng Không ?
+                 <a href="/index.php?controller=login&action=index">Đăng Nhập</a>
+             </summary>
+         </form>
+     </div>
+ </div>
+ <script>
+     // Ngăn chặn người dùng nhấp nút button nhiều lần
+     function disableBtn() {
+         setTimeout(function() {
+             $("#sendmail").prop("disabled", true);
+         }, 100);
+
+         setTimeout(function() {
+             $("#sendmail").prop("disabled", false);
+         }, 15000);
+     }
+ </script>

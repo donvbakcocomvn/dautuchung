@@ -1,0 +1,23 @@
+{
+    "short_name": "ShareInvestment",
+    "name": "Share Investment",
+    "description": "Share Investment",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/public/no-user.jpg",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/public/no-user.jpg",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#62060A",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#62060A"
+}

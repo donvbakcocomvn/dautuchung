@@ -1,74 +1,182 @@
 [
     {
-        "HinhAnh": "/public/duan/dat-nen.jpg",
-        "DiaChi": "Giang nghĩa, Đăk Nông",
-        "Ten": "Đất nền Lô 1099 1000m2",
-        "GiaTriDuAn": "25,000,000,000 <sup>đ</sup>",
-        "LoaiDuAn": "Đất Nền",
-        "TrangThai": "Đang Chờ",
-        "XuatThamGia": "15/20",
+        "HinhAnh": "/public/duan/trang-trai-bo-sua-dalat.jpg",
+        "DiaChi": "Đà Lạt",
+        "Ten": "Nông trại nuôi bò thịt",
+        "GiaTriDuAn": "10,000,000,000 <sup>đ</sup>",
+        "DienTichHa": "10 ha",
+        "LoaiHinh": "Nuôi Bò",
+        "SoLuong": "2,000 con",
+        "LoaiDuAn": "Nông trại",
+        "TrangThai": "Đang triển khai",
+        "XuatThamGia": "7/10",
         "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
-        "LaiXuatCoBan": "20%/năm",
-        "ThoiGianDauTu": "6 tháng"
+        "LaiXuatCoBanTT": "1,300,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "30%",
+        "ThoiGianDauTu": "12 tháng",
+        "DuKien": {
+            "TongDanhThu": "13,000,000,000 <sup>đ</sup>",
+            "Tyxuatsinhlai": "30 <sup>%</sup>",
+            "GiaTriDanhThu1Goi": "1,300,000,000 <sup>đ</sup>",
+            "TyXuatSinhLai1Goi": " 300,000,000 <sup>đ</sup>"
+        },
+        "ThucTe": {
+            "TongThuHoach": "195,482 Kg",
+            "GiaBan": "100,000  <sup>đ</sup>",
+            "TongDanhThu": " 19,548,150,000<sup>đ</sup>",
+            "LaiTongDuAn": " 9,548,150,000 <sup>đ</sup>",
+            "TyXuatLai1Goi": " 1,954,815,000 <sup>đ</sup>",
+            "TongThu1Goi": "  954,815,000 <sup>đ</sup>"
+        }
     },
     {
-        "HinhAnh": "/public/duan/chung-cu.jpg",
-        "DiaChi": "Gò vấp, Hồ chí minh",
-        "Ten": "Chung Cư An Lạc",
-        "GiaTriDuAn": "495,000,000,000,000 <sup>đ</sup>",
-        "LoaiDuAn": "Chung cư",
-        "TrangThai": "Đang chạy",
-        "XuatThamGia": "550",
-        "GiaTri1Xuat": "900,000,000 <sup>đ</sup>",
-        "LaiXuatCoBan": "20%/năm",
-        "ThoiGianDauTu": "18 tháng"
-    },
-    {
-        "HinhAnh": "/public/duan/nong-trai.jpg",
-        "DiaChi": "Lâm đồng",
-        "Ten": "Trang trại rau sạch 4ha",
-        "GiaTriDuAn": "100,000,000,000 <sup>đ</sup>",
-        "LoaiDuAn": "Chung cư",
-        "TrangThai": "Đang chạy",
-        "XuatThamGia": "1/4",
-        "GiaTri1Xuat": "25,000,000 <sup>đ</sup>",
-        "LaiXuatCoBan": "20%/năm",
-        "ThoiGianDauTu": "6 tháng"
-    },
-    {
-        "HinhAnh": "/public/duan/chung-cu.jpg",
-        "DiaChi": "Gò vấp, Hồ chí minh",
-        "Ten": "Chung Cư An Hòa",
-        "GiaTriDuAn": "495,000,000,000,000 <sup>đ</sup>",
-        "LoaiDuAn": "Chung cư",
-        "TrangThai": "Đang chạy",
-        "XuatThamGia": "550",
-        "GiaTri1Xuat": "900,000,000 <sup>đ</sup>",
-        "LaiXuatCoBan": "20%/năm",
-        "ThoiGianDauTu": "18 tháng"
-    },
-    {
-        "HinhAnh": "/public/duan/dat-nen.jpg",
-        "DiaChi": "Tậy Ninh ",
-        "Ten": "Đất nền 10x25 250m2",
-        "GiaTriDuAn": "5,000,000,000 <sup>đ</sup>",
-        "LoaiDuAn": "Đất Nền",
-        "TrangThai": "Đang Chờ",
-        "XuatThamGia": "1/5",
+        "HinhAnh": "/public/duan/dan-de.jpg",
+        "DiaChi": "Đà Lạt",
+        "Ten": "Nông trại nuôi dê thịt",
+        "GiaTriDuAn": "10,000,000,000 <sup>đ</sup>",
+        "DienTichHa": "10 ha",
+        "LoaiHinh": "Nuôi dê",
+        "SoLuong": "2,000 con",
+        "LoaiDuAn": "Nông trại",
+        "TrangThai": "Đang triển khai",
+        "XuatThamGia": "7/10",
         "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
-        "LaiXuatCoBan": "20%/năm",
-        "ThoiGianDauTu": "6 tháng"
+        "LaiXuatCoBanTT": "1,300,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "30%",
+        "ThoiGianDauTu": "12 tháng",
+        "DuKien": {
+            "TongDanhThu": "13,000,000,000 <sup>đ</sup>",
+            "Tyxuatsinhlai": "30 <sup>%</sup>",
+            "GiaTriDanhThu1Goi": "1,300,000,000 <sup>đ</sup>",
+            "TyXuatSinhLai1Goi": " 300,000,000 <sup>đ</sup>"
+        },
+        "ThucTe": {
+            "TongThuHoach": "195,482 Kg",
+            "GiaBan": "100,000  <sup>đ</sup>",
+            "TongDanhThu": " 19,548,150,000<sup>đ</sup>",
+            "LaiTongDuAn": " 9,548,150,000 <sup>đ</sup>",
+            "TyXuatLai1Goi": " 1,954,815,000 <sup>đ</sup>",
+            "TongThu1Goi": "  954,815,000 <sup>đ</sup>"
+        }
     },
     {
-        "HinhAnh": "/public/duan/nuoi-de.png",
+        "HinhAnh": "/public/duan/heo.png",
         "DiaChi": "Đăk Nông",
-        "Ten": "Trang trại Nuôi 70 con Dê",
-        "GiaTriDuAn": "120,000,000,000 <sup>đ</sup>",
-        "LoaiDuAn": "Chung cư",
-        "TrangThai": "Đang chạy",
-        "XuatThamGia": "1/4",
-        "GiaTri1Xuat": "30,000,000 <sup>đ</sup>",
-        "LaiXuatCoBan": "20%/năm",
-        "ThoiGianDauTu": "2 năm"
+        "Ten": "Nông trại nuôi heo thịt",
+        "GiaTriDuAn": "10,000,000,000 <sup>đ</sup>",
+        "DienTichHa": "10 ha",
+        "LoaiHinh": "Nuôi heo",
+        "SoLuong": "2,000 con",
+        "LoaiDuAn": "Nông trại",
+        "TrangThai": "Đang triển khai",
+        "XuatThamGia": "7/10",
+        "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
+        "LaiXuatCoBanTT": "1,300,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "30%",
+        "ThoiGianDauTu": "12 tháng",
+        "DuKien": {
+            "TongDanhThu": "13,000,000,000 <sup>đ</sup>",
+            "Tyxuatsinhlai": "30 <sup>%</sup>",
+            "GiaTriDanhThu1Goi": "1,300,000,000 <sup>đ</sup>",
+            "TyXuatSinhLai1Goi": " 300,000,000 <sup>đ</sup>"
+        },
+        "ThucTe": {
+            "TongThuHoach": "195,482 Kg",
+            "GiaBan": "100,000  <sup>đ</sup>",
+            "TongDanhThu": " 19,548,150,000<sup>đ</sup>",
+            "LaiTongDuAn": " 9,548,150,000 <sup>đ</sup>",
+            "TyXuatLai1Goi": " 1,954,815,000 <sup>đ</sup>",
+            "TongThu1Goi": "  954,815,000 <sup>đ</sup>"
+        }
+    },
+    {
+        "HinhAnh": "/public/duan/cuu.png",
+        "DiaChi": "Đăk Nông",
+        "Ten": "Nông trại nuôi cừu thịt",
+        "GiaTriDuAn": "10,000,000,000 <sup>đ</sup>",
+        "DienTichHa": "10 ha",
+        "LoaiHinh": "Nuôi cừu",
+        "SoLuong": "2,000 con",
+        "LoaiDuAn": "Nông trại",
+        "TrangThai": "Đang triển khai",
+        "XuatThamGia": "7/10",
+        "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
+        "LaiXuatCoBanTT": "1,300,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "30%",
+        "ThoiGianDauTu": "12 tháng",
+        "DuKien": {
+            "TongDanhThu": "13,000,000,000 <sup>đ</sup>",
+            "Tyxuatsinhlai": "30 <sup>%</sup>",
+            "GiaTriDanhThu1Goi": "1,300,000,000 <sup>đ</sup>",
+            "TyXuatSinhLai1Goi": " 300,000,000 <sup>đ</sup>"
+        },
+        "ThucTe": {
+            "TongThuHoach": "195,482 Kg",
+            "GiaBan": "100,000  <sup>đ</sup>",
+            "TongDanhThu": " 19,548,150,000<sup>đ</sup>",
+            "LaiTongDuAn": " 9,548,150,000 <sup>đ</sup>",
+            "TyXuatLai1Goi": " 1,954,815,000 <sup>đ</sup>",
+            "TongThu1Goi": "  954,815,000 <sup>đ</sup>"
+        }
+    },
+    {
+        "HinhAnh": "/public/duan/lon-rung.jpg",
+        "DiaChi": "Đăk Nông",
+        "Ten": "Nông trại nuôi heo rừng",
+        "GiaTriDuAn": "10,000,000,000 <sup>đ</sup>",
+        "DienTichHa": "10 ha",
+        "LoaiHinh": "Nuôi Heo rừng",
+        "SoLuong": "2,000 con",
+        "LoaiDuAn": "Nông trại",
+        "TrangThai": "Đang triển khai",
+        "XuatThamGia": "7/10",
+        "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
+        "LaiXuatCoBanTT": "1,300,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "30%",
+        "ThoiGianDauTu": "12 tháng",
+        "DuKien": {
+            "TongDanhThu": "13,000,000,000 <sup>đ</sup>",
+            "Tyxuatsinhlai": "30 <sup>%</sup>",
+            "GiaTriDanhThu1Goi": "1,300,000,000 <sup>đ</sup>",
+            "TyXuatSinhLai1Goi": " 300,000,000 <sup>đ</sup>"
+        },
+        "ThucTe": {
+            "TongThuHoach": "195,482 Kg",
+            "GiaBan": "100,000  <sup>đ</sup>",
+            "TongDanhThu": " 19,548,150,000<sup>đ</sup>",
+            "LaiTongDuAn": " 9,548,150,000 <sup>đ</sup>",
+            "TyXuatLai1Goi": " 1,954,815,000 <sup>đ</sup>",
+            "TongThu1Goi": "  954,815,000 <sup>đ</sup>"
+        }
+    },
+    {
+        "HinhAnh": "/public/duan/trang-trai-bo-sua-dalat.jpg",
+        "DiaChi": "Đăk Nông",
+        "Ten": "Nông trại nuôi bò thịt",
+        "GiaTriDuAn": "10,000,000,000 <sup>đ</sup>",
+        "DienTichHa": "10 ha",
+        "LoaiHinh": "Nuôi Bò",
+        "SoLuong": "2,000 con",
+        "LoaiDuAn": "Nông trại",
+        "TrangThai": "Đang triển khai",
+        "XuatThamGia": "7/10",
+        "GiaTri1Xuat": "1,000,000,000 <sup>đ</sup>",
+        "LaiXuatCoBanTT": "1,300,000,000 <sup>đ</sup>",
+        "LaiXuatCoBan": "30%",
+        "ThoiGianDauTu": "12 tháng",
+        "DuKien": {
+            "TongDanhThu": "13,000,000,000 <sup>đ</sup>",
+            "Tyxuatsinhlai": "30 <sup>%</sup>",
+            "GiaTriDanhThu1Goi": "1,300,000,000 <sup>đ</sup>",
+            "TyXuatSinhLai1Goi": " 300,000,000 <sup>đ</sup>"
+        },
+        "ThucTe": {
+            "TongThuHoach": "195,482 Kg",
+            "GiaBan": "100,000  <sup>đ</sup>",
+            "TongDanhThu": " 19,548,150,000<sup>đ</sup>",
+            "LaiTongDuAn": " 9,548,150,000 <sup>đ</sup>",
+            "TyXuatLai1Goi": " 1,954,815,000 <sup>đ</sup>",
+            "TongThu1Goi": "  954,815,000 <sup>đ</sup>"
+        }
     }
 ]
