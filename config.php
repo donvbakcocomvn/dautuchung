@@ -29,4 +29,3 @@ if (true) {
     $INI['DBname'] = "dautuchung";
 }
 
-//#mbne6Y3&foG
