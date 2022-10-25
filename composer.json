@@ -1,0 +1,23 @@
+{
+    "name": "namdong92/dautuchung",
+    "description": "Đầu tư chung",
+    "authors": [
+        {
+            "name": "NameDongVanDo",
+            "email": "namdong92@gmail.com"
+        }
+    ],
+    "require": {
+        "namdongvando/rpfbc": "^3.22",
+        "namdongvando/imagesoptimizer": "^1.0",
+        "phpmailer/phpmailer": "^6.5",
+        "zaloplatform/zalo-php-sdk": "^2.0",
+        "phpoffice/phpspreadsheet": "^1.24"
+    },
+    "autoload": {
+        "psr-4": {
+            "QuanLyNhanVien\\": "App/QuanLyNhanVien/src/",
+            "HangSanXuat\\": "App/HangSanXuat/src/"
+        }
+    }
+}

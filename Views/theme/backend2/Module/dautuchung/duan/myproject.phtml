@@ -1,0 +1,58 @@
+<?php
+
+use Module\dautuchung\Model\DuAn;
+
+$duan = $data["Items"];
+?>
+<div class="widget">
+    <div class=" ">
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Thao Tác</th>
+                        <th>Dự án</th>
+                        <th>Tổng Vốn</th>
+                        <th>Số gói đầu tư</th>
+                        <th>Lãi suất cơ bản</th>
+                        <th>Tổng Tiền</th>
+                        <th style="width: 150px;">Ngày Bắt Đầu</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($duan as $key => $value) {
+                        $value = new DuAn($value);
+                    ?>
+                        <tr>
+                            <td>
+                                <?php
+                                echo $value->LinkEdit();
+                                ?>
+
+                            </td>
+                            <td><?php echo $value->Name ?></td>
+                            <th><?php echo $value->GiaTriDuAn(); ?></th>
+                            <th><?php echo $value->XuatThamGia; ?></th>
+                            <th><?php echo $value->LaiXuatCoBan; ?></th>
+                            <th><?php echo $value->GiaTriDuAn(); ?></th>
+                            <th><?php echo $value->ThoiGianBatDau; ?></th>
+                            <th><?php echo $value->TrangThai; ?></th>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</div>
